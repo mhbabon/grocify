@@ -1,0 +1,82 @@
+name: grocify
+description: "A new Flutter project."
+
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.4.3
+
+
+
+#---------------------PACKAGES---------------------#
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  #UTILITY PACKAGES
+  http: ^1.1.0
+  intl: ^0.20.1
+  logger: ^2.0.1
+  url_launcher: ^6.1.12
+  flutter_native_splash: ^2.4.4
+  smooth_page_indicator: ^1.2.0+3
+
+
+
+
+  #ICONS
+  cupertino_icons: ^1.0.6
+  iconsax: ^0.0.8
+
+
+  #STATE MANAGEMENT
+  get: ^4.6.5
+  get_storage: ^2.1.1
+
+  #PROGECT SPECIFIC
+
+  #------------/. PACKAGES END ---------------#
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+
+  flutter_lints: ^5.0.0
+
+
+
+flutter:
+  uses-material-design: true
+
+
+  #------------LOCAL ASSETS---------------#
+  assets:
+    - assets/logos/
+    - assets/fonts/
+    - assets/images/
+    - assets/images/on_boarding_images/
+
+
+
+
+  #----------LOCAL FONTS---------------#
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 800
