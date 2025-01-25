@@ -5,7 +5,7 @@ import 'package:grocify/features/authentication/screens/login/widgets/loging_hea
 import 'package:grocify/utils/constants/colors.dart';
 import 'package:grocify/utils/constants/text_strings.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
-import 'package:iconsax/iconsax.dart';
+
 
 import '../../../../common/spacing_styles.dart';
 import '../../../../utils/constants/image_strings.dart';
