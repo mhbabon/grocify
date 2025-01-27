@@ -11,7 +11,6 @@ import 'package:grocify/utils/theme/custom_theme/text_theme.dart';
 
 class TAppTheme {
   TAppTheme._();
-
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
@@ -46,5 +45,5 @@ class TAppTheme {
 
   );
 
-  static var light;
+
 }
