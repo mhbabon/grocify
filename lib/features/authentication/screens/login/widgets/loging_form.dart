@@ -1,6 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:grocify/features/authentication/screens/signup.widgets/signup.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../utils/constants/sizes.dart';
@@ -74,7 +76,7 @@ class TLogingForm extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => SignupScreen()),
                   child: Text(TTexts.createAccount),
                 ),
               )
