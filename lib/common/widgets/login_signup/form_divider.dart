@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants/colors.dart';
-import '../../utils/helpers/helper_functions.dart';
+import 'package:grocify/utils/constants/colors.dart';
+import '../../../utils/helpers/helper_functions.dart';
+
 
 class TFromDivider extends StatelessWidget {
   const TFromDivider({
