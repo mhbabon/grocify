@@ -6,7 +6,6 @@ import 'package:grocify/utils/constants/sizes.dart';
 import 'package:grocify/utils/constants/text_strings.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
 
-import '../login/login.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
