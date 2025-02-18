@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grocify/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:grocify/features/authentication/controllers.onboarding/onboarding_controller.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocify/features/shop/screens/home/home.dart';
 import 'package:grocify/utils/constants/colors.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
 import 'package:iconsax/iconsax.dart';
@@ -46,7 +47,7 @@ class NavigationController extends GetxController{
   final Rx<int> selectedIndex = 0.obs;
 
   final screen = [
-    Container(color: Colors.green,),
+    const HomeScreen(),
     Container(color: Colors.red,),
     Container(color: Colors.yellow,),
     Container(color: Colors.blue,)
