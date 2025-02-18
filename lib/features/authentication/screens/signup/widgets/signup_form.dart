@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grocify/features/authentication/screens/signup.widgets/term_condition_checkbox.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:grocify/features/authentication/screens/signup/verify_email.dart';
+import 'package:grocify/features/authentication/screens/signup/widgets/term_condition_checkbox.dart';
 import 'package:iconsax/iconsax.dart';
-import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/constants/text_strings.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/constants/text_strings.dart';
 
 class TSignupForm extends StatelessWidget {
   const TSignupForm({
@@ -94,7 +97,7 @@ class TSignupForm extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-              onPressed: () {}, child: Text(TTexts.createAccount)),
+              onPressed: () => Get. to(()=> const VerifyEmailScreen()), child: Text(TTexts.createAccount)),
         )
       ],
     ));

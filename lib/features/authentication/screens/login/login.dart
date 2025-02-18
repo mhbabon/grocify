@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocify/common/widgets/login_signup/form_divider.dart';
+import 'package:grocify/common/widgets/login_signup/social_buttons.dart';
 import 'package:grocify/features/authentication/screens/login/widgets/loging_form.dart';
 import 'package:grocify/features/authentication/screens/login/widgets/loging_header.dart';
 import 'package:grocify/utils/constants/text_strings.dart';
 import '../../../../common/styles/spacing_styles.dart';
-import '../../../../common/widgets.login_signup/form_divider.dart';
-import '../../../../common/widgets.login_signup/social_buttons.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class LoginScreen extends StatelessWidget {

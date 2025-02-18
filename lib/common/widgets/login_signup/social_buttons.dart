@@ -1,10 +1,11 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:grocify/utils/constants/colors.dart';
+import 'package:grocify/utils/constants/image_strings.dart';
+import 'package:grocify/utils/constants/sizes.dart';
 
-import '../../utils/constants/colors.dart';
-import '../../utils/constants/image_strings.dart';
-import '../../utils/constants/sizes.dart';
+
 
 class TSocialButton extends StatelessWidget {
   const TSocialButton({

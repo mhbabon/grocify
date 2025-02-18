@@ -60,6 +60,7 @@ flutter:
     - assets/fonts/
     - assets/images/
     - assets/images/on_boarding_images/
+    - assets/images/animations/
 
 
 
