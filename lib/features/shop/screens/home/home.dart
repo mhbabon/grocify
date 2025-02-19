@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:grocify/features/shop/screens/home/widgets/home_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,14 +11,24 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TPrimaryHeaderContainer(child: Container()),
+            // Header
+            TPrimaryHeaderContainer(
+                child: Column(
+              children: [
+                // App Bar
+                THomeAppBar(),
+
+
+                // Search Bar
+
+                //Categories
+
+
+              ],
+            )),
           ],
         ),
       ),
     );
   }
 }
-
-
-
-

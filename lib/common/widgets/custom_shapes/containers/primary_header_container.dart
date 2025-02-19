@@ -30,6 +30,7 @@ class TPrimaryHeaderContainer extends StatelessWidget {
                       alpha: 0.1),
                 ),
               ),
+              child
             ],
           ),
         ),
