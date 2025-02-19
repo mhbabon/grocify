@@ -23,7 +23,6 @@ class HomeScreen extends StatelessWidget {
 
                 //Categories
 
-
               ],
             )),
           ],
