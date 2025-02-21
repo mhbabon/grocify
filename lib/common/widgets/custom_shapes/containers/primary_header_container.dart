@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocify/common/widgets/custom_shapes/containers/circuler_container.dart';
+import 'package:grocify/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:grocify/common/widgets/custom_shapes/curved_edges/curved_edgs_widget.dart';
 import 'package:grocify/utils/constants/colors.dart';
 class TPrimaryHeaderContainer extends StatelessWidget {
