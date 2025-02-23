@@ -14,6 +14,14 @@ class TImages {
 
   // -- Category Icons
 
+    static const String  beveragesIcon = "assets/icons/categories/beverages.png";
+    static const String  chocolateIcon = "assets/icons/categories/chocolate.png";
+    static const String  iceCreamIcon = "assets/icons/categories/ice_cream.png";
+    static const String  meatAndFishIcon = "assets/icons/categories/meat_and_fish.png";
+    static const String  dairyAndEggIcon = "assets/icons/categories/dairy_and_egg.png";
+    static const String  oilIcon = "assets/icons/categories/oil.png";
+    static const String  bakeryAndSnacksIcon = "assets/icons/categories/bakery_and_snacks.png";
+
 
   // -- Brand Icons
 
@@ -41,7 +49,9 @@ class TImages {
 
 
   //Banners
-
+ static const String promoBanner1 ="assets/images/banners/promo-banner-1.png";
+ static const String promoBanner2 ="assets/images/banners/promo-banner-2.jpg";
+ static const String promoBanner3 ="assets/images/banners/promo-banner-3.png";
 
 
   //Profile
