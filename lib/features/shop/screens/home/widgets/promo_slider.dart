@@ -5,7 +5,6 @@ import 'package:grocify/common/widgets/custom_shapes/containers/circular_contain
 import 'package:grocify/common/widgets/images/t_rounded_image.dart';
 import 'package:grocify/features/shop/controllers/home_controller.dart';
 import 'package:grocify/utils/constants/colors.dart';
-import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 
 class TPromoSlider extends StatelessWidget {
