@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:grocify/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 
 class TGridLayout extends StatelessWidget {
