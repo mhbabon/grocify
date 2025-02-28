@@ -41,6 +41,7 @@ class TImages {
 
   // -- Products
 
+  static const String productImage1 = "assets/images/products/banana.png";
 
 
 
