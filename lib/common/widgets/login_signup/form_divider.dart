@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocify/utils/constants/colors.dart';
-import '../../../utils/helpers/helper_functions.dart';
+import 'package:grocify/utils/extension/util_extension.dart';
 
 
 class TFromDivider extends StatelessWidget {
@@ -13,13 +12,12 @@ class TFromDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Flexible(
             child: Divider(
-          color: dark ? TColors.darkerGrey : TColors.grey,
+          color: context.myColor?.darkGreyColor,
           thickness: 0.5,
           indent: 60,
           endIndent: 5,
@@ -30,7 +28,7 @@ class TFromDivider extends StatelessWidget {
         ),
         Flexible(
             child: Divider(
-          color: dark ? TColors.darkerGrey : TColors.grey,
+          color: context.myColor?.darkGreyColor,
           thickness: 0.5,
           indent: 5,
           endIndent: 60,

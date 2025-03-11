@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/utils/constants/colors.dart';
 import 'package:grocify/utils/device/device_utility.dart';
+import 'package:grocify/utils/extension/util_extension.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
 
 class TTabBar extends StatelessWidget implements PreferredSizeWidget {
@@ -12,7 +13,7 @@ class TTabBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return Material(
-      color: dark ? TColors.black : TColors.white,
+      color: context.myColor?.tabBarColor,
       child: TabBar(
         tabs: tabs,
         isScrollable: true,

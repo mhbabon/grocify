@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocify/utils/extension/util_extension.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 
@@ -24,7 +25,7 @@ class OnBoardingPage extends StatelessWidget {
               image: AssetImage(image)),
           Text(
             title,
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: context.textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
           const SizedBox(

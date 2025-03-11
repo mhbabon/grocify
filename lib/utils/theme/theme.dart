@@ -8,6 +8,8 @@ import 'package:grocify/utils/theme/custom_theme/outlined_button_theme.dart';
 import 'package:grocify/utils/theme/custom_theme/text_field_theme.dart';
 import 'package:grocify/utils/theme/custom_theme/text_theme.dart';
 
+import 'custom_theme/custom_color.dart';
+
 
 class TAppTheme {
   TAppTheme._();
@@ -25,8 +27,7 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
-
-
+    extensions: [TCustomColor.lightCustomColorExtension],
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
@@ -42,7 +43,7 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
-
+    extensions: [TCustomColor.darkCustomColorExtension],
   );
 
 
