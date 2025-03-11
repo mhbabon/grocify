@@ -9,7 +9,8 @@ import 'package:grocify/utils/constants/sizes.dart';
 
 class TPromoSlider extends StatelessWidget {
   const TPromoSlider({
-    super.key, required this.banners,
+    super.key,
+    required this.banners,
   });
 
   final List<String> banners;
@@ -21,26 +22,28 @@ class TPromoSlider extends StatelessWidget {
     return Column(
       children: [
         CarouselSlider(
-          options: CarouselOptions(
-            viewportFraction: 1,
-            onPageChanged: (index, _) => controller.updatePageIndicator(index),
-          ),
-          items: banners.map((url) => TRoundedImage(imageurl: url)).toList()
-        ),
+            options: CarouselOptions(
+              viewportFraction: 1,
+              onPageChanged: (index, _) =>
+                  controller.updatePageIndicator(index),
+            ),
+            items: banners.map((url) => TRoundedImage(imageurl: url)).toList()),
         const SizedBox(
           height: TSizes.spaceBtwItems,
         ),
         Center(
           child: Obx(
-              () => Row(
-                mainAxisSize: MainAxisSize.min,
+            () => Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 for (int i = 0; i < banners.length; i++)
                   TCircularContainer(
                     width: 20,
                     height: 4,
                     margin: EdgeInsets.only(right: 10),
-                    backgroundColor: controller.carousalCurrentIndex.value == i ? Colors.green : TColors.grey,
+                    backgroundColor: controller.carousalCurrentIndex.value == i
+                        ? Colors.green
+                        : TColors.grey,
                   ),
               ],
             ),
