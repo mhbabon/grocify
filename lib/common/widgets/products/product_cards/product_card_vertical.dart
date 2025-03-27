@@ -88,7 +88,9 @@ class TProductCardVertical extends StatelessWidget {
                   SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
-                  TBrandTitleText(title: 'Fruits',),
+                  TBrandTitleText(
+                    title: 'Fruits',
+                  ),
                 ],
               ),
             ),
@@ -131,5 +133,3 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
-
-
