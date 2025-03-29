@@ -56,7 +56,7 @@ class TImages {
 
 
   //Profile
-
+static const String user = "assets/images/user/user.png";
 
   // -- Payment Methods
 
