@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:grocify/common/widgets/appbar/appbar.dart';
 import 'package:grocify/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:grocify/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:grocify/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:grocify/common/widgets/texts/section_heading.dart';
+import 'package:grocify/features/personalization/screens/profile/profile.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -20,7 +22,7 @@ class SettingsScreen extends StatelessWidget {
             //  --- Header
 
             TPrimaryHeaderContainer(child: Column(
-              children: [
+              children: <Widget>[
                 //  --- AppBar
                TAppBar(
                  title: Text('Account',style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white),),),
@@ -29,8 +31,8 @@ class SettingsScreen extends StatelessWidget {
                 
                 // --- UserProfileCard
                 
-                TUserProfileTile(),
-                const SizedBox(height: TSizes.spaceBtwSections,),
+                TUserProfileTile(onPressed: () => Get.to(() => const ProfileScreen()),),
+                 SizedBox(height: TSizes.spaceBtwSections,),
               ],
             ) ),
             // --- Body
