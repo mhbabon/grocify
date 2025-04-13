@@ -41,7 +41,7 @@ class UserReviewCard extends StatelessWidget {
           ],
         ),
         SizedBox(width: TSizes.spaceBtwItems,),
-        ReadMoreText('The user interface of the app is quite intuitive. I was ablle to negative and make purchases seamlessly. Great job!',
+        ReadMoreText('The user interface of the app is quite intuitive. I was able to negative and make purchases seamlessly. Great job!',
         trimLines:1,
           trimMode: TrimMode.Line,
           trimExpandedText: ' Show less',
@@ -64,7 +64,7 @@ class UserReviewCard extends StatelessWidget {
                   Text('02 Apr 2025',style: Theme.of(context).textTheme.bodyMedium,)
                 ],
               ),SizedBox(width: TSizes.spaceBtwItems,),
-              ReadMoreText('The user interface of the app is quite intuitive. I was ablle to negative and make purchases seamlessly. Great job!',
+              ReadMoreText('The user interface of the app is quite intuitive. I was able to negative and make purchases seamlessly. Great job!',
                 trimLines:1,
                 trimMode: TrimMode.Line,
                 trimExpandedText: ' Show less',
