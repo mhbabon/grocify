@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:grocify/common/widgets/texts/section_heading.dart';
 import 'package:grocify/features/shop/screens/product_details/widgets/bottom_add_to_cart_widget.dart';
 import 'package:grocify/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:grocify/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 import 'package:grocify/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:grocify/features/shop/screens/product_details/widgets/rating_share_widget.dart';
+import 'package:grocify/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
@@ -65,7 +67,7 @@ class ProductDetailScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TSectionHeading(title: 'Reviews(199)',showActionButton: false,),
-                      IconButton(onPressed: () {}, icon: Icon(Iconsax.arrow_right_3,size: 18,))
+                      IconButton(onPressed: () => Get.to(() => const ProductReviewsScreen()), icon: Icon(Iconsax.arrow_right_3,size: 18,))
                     ],
                   ),
                   SizedBox(height: TSizes.spaceBtwSections,)
