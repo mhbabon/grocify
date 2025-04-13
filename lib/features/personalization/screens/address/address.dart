@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocify/common/widgets/appbar/appbar.dart';
-import 'package:grocify/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:grocify/features/personalization/screens/address/add_new_address.dart';
 import 'package:grocify/features/personalization/screens/address/widgets/single_address.dart';
 import 'package:grocify/utils/constants/colors.dart';
