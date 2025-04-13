@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:grocify/common/styles/shadows.dart';
 import 'package:grocify/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:grocify/common/widgets/icons/t_circular_icon.dart';
@@ -6,6 +7,7 @@ import 'package:grocify/common/widgets/images/t_rounded_image.dart';
 import 'package:grocify/common/widgets/texts/product_price_text.dart';
 import 'package:grocify/common/widgets/texts/product_title_text.dart';
 import 'package:grocify/common/widgets/texts/t_brand_title_text.dart';
+import 'package:grocify/features/shop/screens/product_details/product_detail.dart';
 import 'package:grocify/utils/constants/colors.dart';
 import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/constants/sizes.dart';
@@ -21,7 +23,7 @@ class TProductCardVertical extends StatelessWidget {
 
     /// Container with side paddings, color, edges, radius and shadow.
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailScreen()),
       child: Container(
         width: 180,
         padding: EdgeInsets.all(1),

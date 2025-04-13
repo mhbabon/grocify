@@ -24,6 +24,7 @@ class TImages {
 
 
   // -- Brand Icons
+  static const String  walmart = "assets/icons/brands/walmart.png";
 
 
   // -- Animations
