@@ -39,7 +39,7 @@ class TRoundedImage extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(
           border: border,
-          color: backgroundColor,
+          color: backgroundColor ,
           borderRadius: BorderRadius.circular(borderRadius),
         ),
         child: ClipRRect(
