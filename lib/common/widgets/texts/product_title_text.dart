@@ -23,8 +23,8 @@ class TProductTitleText extends StatelessWidget {
       title,
       style: smallSize ? Theme.of(context).textTheme.labelLarge : Theme.of(context).textTheme.titleSmall,
       overflow: TextOverflow.ellipsis,
-      maxLines: 2,
-      textAlign: TextAlign.left,
+      maxLines: maxLines,
+      textAlign: textAlign,
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:grocify/features/shop/screens/cart/cart.dart';
 import 'package:grocify/utils/constants/colors.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -16,7 +18,7 @@ class TCartCounterIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(children: [
       IconButton(
-          onPressed: onPressed,
+          onPressed:  () => Get.to(() => CartScreen()),
           icon: Icon(
             Iconsax.shopping_bag,
             color: TColors.white,
