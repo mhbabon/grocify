@@ -70,6 +70,7 @@ flutter:
     - assets/images/user/
     - assets/icons/brands/
     - assets/images/reviews/
+    - assets/icons/payment_methods/
 
 
 

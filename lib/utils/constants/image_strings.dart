@@ -64,5 +64,12 @@ static const String user = "assets/images/user/user.png";
 
   // -- Payment Methods
 
+  static const String googlePay = "assets/icons/payment_methods/google-pay.png";
+  static const String creditCard = "assets/icons/payment_methods/credit-card.png";
+  static const String masterCard = "assets/icons/payment_methods/master-card.png";
+  static const String paypal = "assets/icons/payment_methods/paypal.png";
+  static const String visa = "assets/icons/payment_methods/visa.png";
+  static const String successfulPaymentIcon = "assets/icons/payment_methods/successful_payment_icon.png";
+
 }
 

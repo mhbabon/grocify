@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grocify/features/authentication/screens/login/login.dart';
+import 'package:grocify/features/shop/screens/home/home.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 import 'package:grocify/utils/constants/text_strings.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
@@ -35,7 +35,7 @@ class SuccessScreen extends StatelessWidget {
 
 
               ///   Buttons
-              SizedBox(width: double.infinity,child:ElevatedButton(onPressed: () => Get.to(()=> LoginScreen()) , child: const Text(TTexts.tContinue)) ,),
+              SizedBox(width: double.infinity,child:ElevatedButton(onPressed: () => Get.to(()=> HomeScreen()) , child: const Text(TTexts.tContinue)) ,),
 
 
             ],
