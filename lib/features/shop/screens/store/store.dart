@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:grocify/common/widgets/appbar/appbar.dart';
 import 'package:grocify/common/widgets/appbar/tabbar.dart';
 import 'package:grocify/common/widgets/brands/brand_card.dart';
@@ -6,6 +7,7 @@ import 'package:grocify/common/widgets/custom_shapes/containers/search_container
 import 'package:grocify/common/widgets/layouts/grid_layout.dart';
 import 'package:grocify/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:grocify/common/widgets/texts/section_heading.dart';
+import 'package:grocify/features/shop/screens/brand/all_brands.dart';
 import 'package:grocify/features/shop/screens/store/widget/category_tab.dart';
 import 'package:grocify/utils/constants/colors.dart';
 import 'package:grocify/utils/constants/sizes.dart';
@@ -66,7 +68,7 @@ class StoreScreen extends StatelessWidget {
                           TSectionHeading(
                             title: 'Feature Brands',
                             showActionButton: true,
-                            onPressed: () {},
+                            onPressed: () =>Get.to(() => AllBrandsScreen()),
                           ),
                           const SizedBox(
                             height: TSizes.spaceBtwItems / 1.5,
