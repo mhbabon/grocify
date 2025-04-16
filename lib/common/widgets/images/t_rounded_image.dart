@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocify/utils/constants/colors.dart';
 import 'package:grocify/utils/constants/sizes.dart';
+
 
 class TRoundedImage extends StatelessWidget {
   const TRoundedImage({
@@ -12,7 +12,7 @@ class TRoundedImage extends StatelessWidget {
     this.height,
     this.applyImageRadius = true,
     required this.imageurl,
-    this.backgroundColor = TColors.light,
+    this.backgroundColor,
     this.fit = BoxFit.contain,
     this.isNetworkingImage = false,
     this.borderRadius = TSizes.md,
@@ -22,7 +22,7 @@ class TRoundedImage extends StatelessWidget {
   final String imageurl;
   final bool applyImageRadius;
   final BoxBorder? border;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final BoxFit? fit;
   final EdgeInsets? padding;
   final bool isNetworkingImage;
@@ -31,6 +31,7 @@ class TRoundedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
       onTap: onPressed,
       child: Container(
