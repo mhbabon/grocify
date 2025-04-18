@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "643063938834",
+    "project_id": "grocify-5568c",
+    "storage_bucket": "grocify-5568c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643063938834:android:4ee0acb19c6c368322fdcb",
+        "android_client_info": {
+          "package_name": "com.example.grocify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643063938834-676g844lgl2tfusijtsk1hjnl0640nl1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grocify",
+            "certificate_hash": "f0b50f3e74cc83e4e1cee7b6232f82c6c5b32dc2"
+          }
+        },
+        {
+          "client_id": "643063938834-u5me2fi1pri4mi0k5mk3dbt5cpvrsie3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvHwesG5_PpeMHBKWTAYbKbP_rTdcnNNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643063938834-u5me2fi1pri4mi0k5mk3dbt5cpvrsie3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "643063938834-s8cg7802cd8iphpv5g1qprfi7k06860s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.grocify"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

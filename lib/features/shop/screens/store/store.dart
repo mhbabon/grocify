@@ -66,7 +66,7 @@ class StoreScreen extends StatelessWidget {
 
                           /// --- Featured Brands
                           TSectionHeading(
-                            title: 'Feature Brands',
+                            title: 'Feature Categories',
                             showActionButton: true,
                             onPressed: () =>Get.to(() => AllBrandsScreen()),
                           ),
