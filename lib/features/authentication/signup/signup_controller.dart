@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
+import 'package:grocify/features/personalization/models/user_model.dart';
 import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/helpers/network_manager.dart';
 import 'package:grocify/utils/popups/full_screen_loader.dart';
@@ -21,7 +23,7 @@ class SignupController extends GetxController {
   GlobalKey<FormState> signupFormkey = GlobalKey<FormState>();
 
   /// --- Signup
-  Future<void> signup() async {
+  void signup() async {
     try {
       /// start Loading
       TFullScreenLoader.openLoadingDialog(
@@ -38,7 +40,6 @@ class SignupController extends GetxController {
         return;
       }
 
-
       /// Privacy Policy CHECK
       if (!privacyPolicy.value) {
         TLoaders.warningSnackBar(
@@ -50,7 +51,23 @@ class SignupController extends GetxController {
       }
 
       /// REGISTER USER IN THE FIREBASE AUTHENTICATION & SAVE USER DATA IN THE FIREBASE
+
+      final userCredential = await AuthenticationRepository.instance
+          .registerWithEmailAndPassword(
+              email.text.trim(), password.text.trim());
+
       /// SAVE AUTHENTICATED IN THE FIREBASE FIRESTORE
+      ///
+      final newUser = UserModel(
+        id: userCredential.user!.uid,
+        firstName: firstName.text.trim(),
+        lastName: lastName.text.trim(),
+        userName: userName.text.trim(),
+        email: email.text.trim(),
+        phoneNumber: phoneNumber.text.trim(),
+        profilePicture: '',
+      );
+
       /// SHOW SUCCESS MESSAGE
       /// MOVE TO VERIFY EMAIL SCREEN
     } catch (e) {
