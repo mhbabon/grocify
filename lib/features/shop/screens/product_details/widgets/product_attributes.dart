@@ -24,8 +24,8 @@ class TProductAttributes extends StatelessWidget {
               /// --- Title, Price & Stock
               Row(
                 children: [
-                  TSectionHeading(title: 'Variation',showActionButton: false,),
-                  SizedBox(
+                  const TSectionHeading(title: 'Variation',showActionButton: false,),
+                  const SizedBox(
                     width: TSizes.spaceBtwItems,
                   ),
                   Column(
@@ -33,11 +33,11 @@ class TProductAttributes extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          TProductTitleText(
+                          const TProductTitleText(
                             title: 'Price : ',
                             smallSize: true,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: TSizes.spaceBtwItems,
                           ),
                           Text('\$10',
@@ -46,10 +46,10 @@ class TProductAttributes extends StatelessWidget {
                                   .titleSmall!
                                   .apply(
                                       decoration: TextDecoration.lineThrough)),
-                          SizedBox(
+                          const SizedBox(
                             width: TSizes.spaceBtwItems,
                           ),
-                          TProductPriceText(price: '7.5')
+                          const TProductPriceText(price: '7.5')
                         ],
                       ),
 
@@ -57,7 +57,7 @@ class TProductAttributes extends StatelessWidget {
 
                       Row(
                         children: [
-                          TProductTitleText(
+                          const TProductTitleText(
                             title: 'Stock : ',
                             smallSize: true,
                           ),
@@ -73,7 +73,7 @@ class TProductAttributes extends StatelessWidget {
               ),
 
               /// -- Variation Description
-              TProductTitleText(
+              const TProductTitleText(
                   title:
                       'This is the Description of the product and it can go up to max four lines.',
                   smallSize: true,

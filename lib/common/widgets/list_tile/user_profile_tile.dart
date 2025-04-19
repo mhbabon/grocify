@@ -13,7 +13,7 @@ class TUserProfileTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: TCircularImage(
+      leading: const TCircularImage(
         image: TImages.user,
         width: 50,
         height: 50,

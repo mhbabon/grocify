@@ -35,25 +35,25 @@ class SettingsScreen extends StatelessWidget {
                 // --- UserProfileCard
                 
                 TUserProfileTile(onPressed: () => Get.to(() => const ProfileScreen()),),
-                 SizedBox(height: TSizes.spaceBtwSections,),
+                 const SizedBox(height: TSizes.spaceBtwSections,),
               ],
             ) ),
             // --- Body
 
-            Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
+            Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
 
             child:Column(
               children: [
                 /// -- Account Settings
-                TSectionHeading(
+                const TSectionHeading(
                   title: 'Account Settings',
                   showActionButton: false,
                 ),
-                SizedBox(height: TSizes.spaceBtwItems,),
+                const SizedBox(height: TSizes.spaceBtwItems,),
 
-                TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Address', subTitle: 'Set shopping delivery address', onTap: () =>Get.to(() => UserAddressScreen()),),
-                TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove products and move to checkout', onTap: () => Get.to(() => CartScreen()),),
-                TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'In-progress and Completed Orders', onTap: () => Get.to(() => OrderScreen()),),
+                TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Address', subTitle: 'Set shopping delivery address', onTap: () =>Get.to(() => const UserAddressScreen()),),
+                TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove products and move to checkout', onTap: () => Get.to(() => const CartScreen()),),
+                TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'In-progress and Completed Orders', onTap: () => Get.to(() => const OrderScreen()),),
                 TSettingsMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account', onTap: () {},),
                 TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of al the discounted coupons', onTap: () {},),
                 TSettingsMenuTile(icon: Iconsax.notification, title: 'Notification', subTitle: 'Set any kind of notification message', onTap: () {},),
@@ -61,10 +61,10 @@ class SettingsScreen extends StatelessWidget {
 
 
                 /// -- App Settings
-                SizedBox(height: TSizes.spaceBtwSections,),
-                TSectionHeading(title: 'App Settings', showActionButton: false,),
-                SizedBox(height: TSizes.spaceBtwItems,),
-                TSettingsMenuTile(icon: Iconsax.document_upload, title: 'Load Data', subTitle: 'Upload Data to your Cloud Firebase'),
+                const SizedBox(height: TSizes.spaceBtwSections,),
+                const TSectionHeading(title: 'App Settings', showActionButton: false,),
+                const SizedBox(height: TSizes.spaceBtwItems,),
+                const TSettingsMenuTile(icon: Iconsax.document_upload, title: 'Load Data', subTitle: 'Upload Data to your Cloud Firebase'),
                 TSettingsMenuTile(icon: Iconsax.location, title: 'BDLocation ', subTitle: 'Set recommendation based on location',trailing: Switch(value: true , onChanged: (value) {}),),
                 TSettingsMenuTile(icon: Iconsax.security_user, title: 'Safe Mode ', subTitle: 'Search result is safe for all aes',trailing: Switch(value: false , onChanged: (value) {}),),
                 TSettingsMenuTile(icon: Iconsax.image, title: 'HD Image Quality ', subTitle: 'Set image quality to be seen',trailing: Switch(value: false , onChanged: (value) {}),),

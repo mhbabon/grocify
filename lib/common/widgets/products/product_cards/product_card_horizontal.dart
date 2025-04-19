@@ -19,7 +19,7 @@ class TProductCartHorizontal extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
     return Container(
       width: 310,
-      padding: EdgeInsets.all(1),
+      padding: const EdgeInsets.all(1),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(TSizes.productImageRadius),
           color: dark ? TColors.darkerGrey : TColors.softGrey),
@@ -28,7 +28,7 @@ class TProductCartHorizontal extends StatelessWidget {
           /// --- Thumbnail
           TRoundedContainer(
             height: 120,
-            padding: EdgeInsets.all(TSizes.sm),
+            padding: const EdgeInsets.all(TSizes.sm),
             backgroundColor: dark ? TColors.dark : TColors.light,
             child: Stack(
               children: [
@@ -60,7 +60,7 @@ class TProductCartHorizontal extends StatelessWidget {
                 ),
 
                 /// --- Favourite Icon Button
-                Positioned(
+                const Positioned(
                     top: 0,
                     right: 0,
                     child: TCircularIcon(
@@ -76,12 +76,12 @@ class TProductCartHorizontal extends StatelessWidget {
           SizedBox(
             width: 172,
             child: Padding(
-              padding: EdgeInsets.only(top: TSizes.sm, left: TSizes.sm),
+              padding: const EdgeInsets.only(top: TSizes.sm, left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                     /// -- Thumbnail Text
-                Column(
+                const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TProductTitleText(title: 'Meher Shagor Kola', smallSize: true,),
@@ -95,7 +95,7 @@ class TProductCartHorizontal extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       /// pricing
-                      Flexible(child: TProductPriceText(price: '12.00')),
+                      const Flexible(child: TProductPriceText(price: '12.00')),
                       /// Add to Cart
                       Container(
                         decoration: const BoxDecoration(
@@ -105,7 +105,7 @@ class TProductCartHorizontal extends StatelessWidget {
                             bottomRight: Radius.circular(TSizes.productImageRadius),
                           ),
                         ),
-                        child: SizedBox(
+                        child: const SizedBox(
                             width: TSizes.iconLg * 1.2,
                             height: TSizes.iconLg * 1.2,
                             child: Center(

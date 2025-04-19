@@ -28,14 +28,14 @@ class NavigationMenu extends StatelessWidget {
             indicatorColor: darkMode
                 ? TColors.white.withValues(alpha: 0.1)
                 : TColors.black.withValues(alpha: 0.1),
-            destinations: [
-              const NavigationDestination(
+            destinations: const [
+              NavigationDestination(
                   icon: Icon(Iconsax.home), label: 'Home'),
-              const NavigationDestination(
+              NavigationDestination(
                   icon: Icon(Iconsax.shop), label: 'Store'),
-              const NavigationDestination(
+              NavigationDestination(
                   icon: Icon(Iconsax.heart), label: 'Wishlist'),
-              const NavigationDestination(
+              NavigationDestination(
                   icon: Icon(Iconsax.user), label: 'Profile'),
             ]),
       ),

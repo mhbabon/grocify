@@ -28,8 +28,8 @@ class TProductImageSlider extends StatelessWidget {
 
             /// Main Large Image
 
-            SizedBox(height: 400, child: Padding(
-              padding: const EdgeInsets.all(TSizes.productImageRadius * 2),
+            const SizedBox(height: 400, child: Padding(
+              padding: EdgeInsets.all(TSizes.productImageRadius * 2),
               child: Center(
                   child: Image(image: AssetImage(TImages.productImage1),)),
             )
@@ -61,7 +61,7 @@ class TProductImageSlider extends StatelessWidget {
             ),
 
             /// -- AppBar Icon
-            TAppBar(
+            const TAppBar(
               showBackArrow: true,
               actions: [
                 TCircularIcon(icon: Iconsax.heart5, color: Colors.red,)

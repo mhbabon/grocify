@@ -20,12 +20,12 @@ class TBillingAddressSection extends StatelessWidget {
         ),
         Row(
           children: [
-            Icon(
+            const Icon(
               Icons.phone,
               color: Colors.grey,
               size: 16,
             ),
-            SizedBox(
+            const SizedBox(
               width: TSizes.spaceBtwItems,
             ),
             Text(
@@ -34,17 +34,17 @@ class TBillingAddressSection extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: TSizes.spaceBtwItems / 2,
         ),
         Row(
           children: [
-            Icon(
+            const Icon(
               Icons.location_history,
               color: Colors.grey,
               size: 16,
             ),
-            SizedBox(
+            const SizedBox(
               width: TSizes.spaceBtwItems,
             ),
             Text(

@@ -13,6 +13,6 @@ final double rating;
     return RatingBarIndicator(
         rating: rating,
         itemSize: 20,
-        itemBuilder: (_, __) => Icon(Iconsax.star1, color: TColors.primary,));
+        itemBuilder: (_, __) => const Icon(Iconsax.star1, color: TColors.primary,));
   }
 }

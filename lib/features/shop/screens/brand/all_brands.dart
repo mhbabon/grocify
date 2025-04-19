@@ -13,21 +13,21 @@ class AllBrandsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TAppBar(
+      appBar: const TAppBar(
         title: Text('Categories'),
         showBackArrow: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
               /// Heading
-              TSectionHeading(
+              const TSectionHeading(
                 title: 'Categories',
                 showActionButton: false,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 
@@ -37,7 +37,7 @@ class AllBrandsScreen extends StatelessWidget {
                   mainAxisExtent: 80,
                   itemBuilder: (context, index) => TBrandCard(
                         showBorder: true,
-                        onTap: () => Get.to(() => BrandProducts()),
+                        onTap: () => Get.to(() => const BrandProducts()),
                       ))
             ],
           ),

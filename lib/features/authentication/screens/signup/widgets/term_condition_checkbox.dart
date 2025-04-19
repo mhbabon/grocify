@@ -28,7 +28,7 @@ class TTermsAndConditionCheckbox extends StatelessWidget {
         ),
 
 
-        SizedBox(
+        const SizedBox(
           height: TSizes.spaceBtwInputFields,
         ),
         Flexible(

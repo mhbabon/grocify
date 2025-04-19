@@ -22,19 +22,19 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               /// Logo, Title and SubTitle
-              TLogingHeader(),
+              const TLogingHeader(),
               const SizedBox(height: TSizes.sm,),
 
               /// Form
-              TLogingForm(),
+              const TLogingForm(),
 
               /// Divider
               TFromDivider(dividerText: TTexts.orSignInWith.capitalize!),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
               ///  Footer
-              TSocialButton()
+              const TSocialButton()
             ],
           ),
         ),

@@ -18,15 +18,15 @@ class CartScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
-      body: Padding(
+      body: const Padding(
         padding: EdgeInsets.all(TSizes.defaultSpace),
         child: TCartItems(),
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: ElevatedButton(
-            onPressed: () => Get.to(() => CheckoutScreen()),
-            child: Text(' Checkout \$48.00')),
+            onPressed: () => Get.to(() => const CheckoutScreen()),
+            child: const Text(' Checkout \$48.00')),
       ),
     );
   }

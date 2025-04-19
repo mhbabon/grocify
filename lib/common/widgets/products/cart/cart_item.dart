@@ -20,13 +20,13 @@ class TCartItem extends StatelessWidget {
         TRoundedImage(imageurl: TImages.productImage1,
           width: 60,
           height: 60,
-          padding: EdgeInsets.all(TSizes.sm),
+          padding: const EdgeInsets.all(TSizes.sm),
           backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
         ),
-        SizedBox(width: TSizes.spaceBtwItems,),
+        const SizedBox(width: TSizes.spaceBtwItems,),
 
         /// Title, Price and Size
-        Expanded(
+        const Expanded(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,

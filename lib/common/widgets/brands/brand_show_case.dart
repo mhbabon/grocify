@@ -25,8 +25,8 @@ class TBrandShowcase extends StatelessWidget {
       child: Column(
         children: [
           /// --- Brand with Product Count
-          TBrandCard(showBorder: false),
-          SizedBox(
+          const TBrandCard(showBorder: false),
+          const SizedBox(
             height: TSizes.spaceBtwItems,
           ),
 
@@ -51,7 +51,7 @@ class TBrandShowcase extends StatelessWidget {
             : TColors.light,
         margin: const EdgeInsets.only(right: TSizes.sm),
         padding: const EdgeInsets.all(TSizes.md),
-        child: Image(
+        child: const Image(
             fit: BoxFit.contain, image: AssetImage(TImages.productImage1)),
       ),
     );

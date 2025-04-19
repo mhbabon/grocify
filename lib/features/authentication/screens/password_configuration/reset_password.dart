@@ -17,7 +17,7 @@ class ResetPassword extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-              onPressed: () => Get.back(), icon: Icon(CupertinoIcons.clear))
+              onPressed: () => Get.back(), icon: const Icon(CupertinoIcons.clear))
         ],
       ),
       body: SingleChildScrollView(
@@ -27,10 +27,10 @@ class ResetPassword extends StatelessWidget {
             children: [
               ///  Image
               Image(
-                image: AssetImage(TImages.deliveredEmailIllustration),
+                image: const AssetImage(TImages.deliveredEmailIllustration),
                 width: THelperFunctions.screenWidth() * 0.6,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
 
@@ -40,7 +40,7 @@ class ResetPassword extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
               Text(
@@ -48,7 +48,7 @@ class ResetPassword extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
 

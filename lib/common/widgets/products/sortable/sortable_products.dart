@@ -14,7 +14,7 @@ class TSortableProducts extends StatelessWidget {
     return Column(
       children: [
         DropdownButtonFormField(
-          decoration: InputDecoration(prefixIcon: Icon(Iconsax.sort)),
+          decoration: const InputDecoration(prefixIcon: Icon(Iconsax.sort)),
           onChanged: (value) {},
           items: [
             'Name',
@@ -28,11 +28,11 @@ class TSortableProducts extends StatelessWidget {
                   DropdownMenuItem(value: option, child: Text(option)))
               .toList(),
         ),
-        SizedBox(
+        const SizedBox(
           height: TSizes.spaceBtwSections,
         ),
         TGridLayout(
-            itemCount: 8, itemBuilder: (_, index) => TProductCardVertical())
+            itemCount: 8, itemBuilder: (_, index) => const TProductCardVertical())
       ],
     );
   }
