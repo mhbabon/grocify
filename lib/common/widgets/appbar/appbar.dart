@@ -70,3 +70,5 @@ class BackArrowButton extends StatelessWidget {
     return  IconButton(onPressed: () => Get.back(), icon: Icon(Iconsax.arrow_left, color: dark ? TColors.white : TColors.dark,));
   }
 }
+
+
