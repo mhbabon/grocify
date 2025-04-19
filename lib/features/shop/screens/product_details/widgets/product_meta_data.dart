@@ -40,25 +40,25 @@ class TProductMetaData extends StatelessWidget {
             /// Price
             Text('\$10', style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough)),
             const  SizedBox(width: TSizes.spaceBtwItems,),
-            TProductPriceText(price: '7.5',isLarge: true,),
+            const TProductPriceText(price: '7.5',isLarge: true,),
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwItems / 1.5,),
+        const SizedBox(height: TSizes.spaceBtwItems / 1.5,),
 
         ///  --- Title
         const TProductTitleText(title: ' Banana '),
-        SizedBox(height: TSizes.spaceBtwItems /1.5,),
+        const SizedBox(height: TSizes.spaceBtwItems /1.5,),
         
         ///  --- Stock Status
         Row(
           children: [
-            TProductTitleText(title: 'Status'),
-            SizedBox(width: TSizes.spaceBtwItems ,),
+            const TProductTitleText(title: 'Status'),
+            const SizedBox(width: TSizes.spaceBtwItems ,),
             Text('In Stock', style: Theme.of(context).textTheme.titleMedium,),
           ],
         ),
 
-        SizedBox(height: TSizes.spaceBtwItems / 1.5,),
+        const SizedBox(height: TSizes.spaceBtwItems / 1.5,),
 
         ///  --- Brand
         Row(
@@ -69,7 +69,7 @@ class TProductMetaData extends StatelessWidget {
               height: 32,
               overlayColor: darkMode ? TColors.white : TColors.black,
             ),
-            TBrandTitleWithVerifiedIconText(title: ' Walmart', brandTextSize: TextSizes.medium,),
+            const TBrandTitleWithVerifiedIconText(title: ' Walmart', brandTextSize: TextSizes.medium,),
           ],
         )
       ],

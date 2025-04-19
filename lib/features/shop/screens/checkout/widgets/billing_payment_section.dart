@@ -19,7 +19,7 @@ class TBillingPaymentSection extends StatelessWidget {
           buttonTitle: 'Change',
           onPressed: () {},
         ),
-        SizedBox(
+        const SizedBox(
           height: TSizes.spaceBtwItems / 2,
         ),
 
@@ -30,13 +30,13 @@ class TBillingPaymentSection extends StatelessWidget {
               width: 60,
               height: 35,
               backgroundColor: dark ? TColors.light : TColors.white,
-              padding: EdgeInsets.all(TSizes.sm),
-              child: Image(
+              padding: const EdgeInsets.all(TSizes.sm),
+              child: const Image(
                 image: AssetImage(TImages.visa),
                 fit: BoxFit.contain,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: TSizes.spaceBtwItems / 2,
             ),
             Text(

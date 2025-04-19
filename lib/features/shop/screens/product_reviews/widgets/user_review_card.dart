@@ -21,40 +21,40 @@ class UserReviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                CircleAvatar(backgroundImage: AssetImage(TImages.userProfileImage2),),
-                SizedBox(width: TSizes.spaceBtwItems,),
+                const CircleAvatar(backgroundImage: AssetImage(TImages.userProfileImage2),),
+                const SizedBox(width: TSizes.spaceBtwItems,),
                 Text('John Doe', style: Theme.of(context).textTheme.titleLarge,),
               ],
             ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwItems,),
+        const SizedBox(height: TSizes.spaceBtwItems,),
         
         
         /// -- Review
         Row(
           children: [
-            TRatingBarIndicator(rating: 4 ),
-            SizedBox(width: TSizes.spaceBtwItems,),
+            const TRatingBarIndicator(rating: 4 ),
+            const SizedBox(width: TSizes.spaceBtwItems,),
             Text('01 Apr 2025', style: Theme.of(context).textTheme.bodyMedium,)
           ],
         ),
-        SizedBox(width: TSizes.spaceBtwItems,),
-        ReadMoreText('The user interface of the app is quite intuitive. I was able to negative and make purchases seamlessly. Great job!',
+        const SizedBox(width: TSizes.spaceBtwItems,),
+        const ReadMoreText('The user interface of the app is quite intuitive. I was able to negative and make purchases seamlessly. Great job!',
         trimLines:1,
           trimMode: TrimMode.Line,
           trimExpandedText: ' Show less',
           trimCollapsedText: ' Show more',
-          moreStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: TColors.primary),
-          lessStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: TColors.primary),
+          moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: TColors.primary),
+          lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: TColors.primary),
         ),
-        SizedBox(height: TSizes.spaceBtwItems,),
+        const SizedBox(height: TSizes.spaceBtwItems,),
 
         // company Review
         TRoundedContainer(
           backgroundColor: dark ? TColors.darkerGrey : TColors.grey,
-          child: Padding(padding: EdgeInsets.all(TSizes.md),
+          child: Padding(padding: const EdgeInsets.all(TSizes.md),
           child: Column(
             children: [
               Row(
@@ -63,19 +63,19 @@ class UserReviewCard extends StatelessWidget {
                   Text("Grocify's Store", style: Theme.of(context).textTheme.bodyLarge,),
                   Text('02 Apr 2025',style: Theme.of(context).textTheme.bodyMedium,)
                 ],
-              ),SizedBox(width: TSizes.spaceBtwItems,),
-              ReadMoreText('The user interface of the app is quite intuitive. I was able to negative and make purchases seamlessly. Great job!',
+              ),const SizedBox(width: TSizes.spaceBtwItems,),
+              const ReadMoreText('The user interface of the app is quite intuitive. I was able to negative and make purchases seamlessly. Great job!',
                 trimLines:1,
                 trimMode: TrimMode.Line,
                 trimExpandedText: ' Show less',
                 trimCollapsedText: ' Show more',
-                moreStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: TColors.primary),
-                lessStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: TColors.primary),
+                moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: TColors.primary),
+                lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: TColors.primary),
               ),
             ],
           ),),
         ),
-        SizedBox(height: TSizes.spaceBtwSections,),
+        const SizedBox(height: TSizes.spaceBtwSections,),
       ],
 
     );

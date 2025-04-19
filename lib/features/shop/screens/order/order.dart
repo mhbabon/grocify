@@ -12,7 +12,7 @@ class OrderScreen extends StatelessWidget {
       /// --- App Bar
       appBar: TAppBar(title: Text('My Orders',style: Theme.of(context).textTheme.headlineSmall,),showBackArrow: true,),
 
-      body: Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
+      body: const Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
       child: TOrderListItems(),
       ),
     );

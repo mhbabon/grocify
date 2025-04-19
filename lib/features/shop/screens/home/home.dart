@@ -23,12 +23,12 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             // Header
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   // App Bar
                   THomeAppBar(),
-                  const SizedBox(
+                  SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
 
@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                         // -- Categories
 
                         THomeCategories(),
-                        const  SizedBox(height: TSizes.spaceBtwSections,)
+                        SizedBox(height: TSizes.spaceBtwSections,)
                       ],
                     ),
                   ),
@@ -69,29 +69,29 @@ class HomeScreen extends StatelessWidget {
 
             /// Body
             Padding(
-                padding: EdgeInsets.all(TSizes.defaultSpace),
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
                 child: Column(
                   children: [
                     /// Promo Slider ---
-                    TPromoSlider(
+                    const TPromoSlider(
                       banners: [
                         TImages.promoBanner1,
                         TImages.promoBanner2,
                         TImages.promoBanner3,
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: TSizes.spaceBtwSections,
                     ),
 
 
                     /// Heading---
-                    TSectionHeading(title: 'Popular Products', onPressed: () =>Get.to(() => AllProducts()),),
-                    SizedBox(height: TSizes.spaceBtwItems,),
+                    TSectionHeading(title: 'Popular Products', onPressed: () =>Get.to(() => const AllProducts()),),
+                    const SizedBox(height: TSizes.spaceBtwItems,),
 
 
                     /// ---Popular Products ---
-                    TGridLayout(itemCount: 4, itemBuilder: (_, index) => TProductCardVertical()),
+                    TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCardVertical()),
 
 
                   ],

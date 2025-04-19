@@ -21,14 +21,14 @@ class TBrandCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: TRoundedContainer(
-        padding: EdgeInsets.all(TSizes.sm),
+        padding: const EdgeInsets.all(TSizes.sm),
         showBorder: showBorder,
         backgroundColor: Colors.transparent,
         child: Row(
           children: [
             /// --- Icon
 
-            Flexible(
+            const Flexible(
               child: TCircularImage(
                 isNetworkImage: false,
                 image: TImages.beveragesIcon,
@@ -36,7 +36,7 @@ class TBrandCard extends StatelessWidget {
               ),
             ),
 
-            SizedBox(
+            const SizedBox(
               width: TSizes.spaceBtwItems / 2,
             ),
 
@@ -46,7 +46,7 @@ class TBrandCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TBrandTitleWithVerifiedIconText(
+                  const TBrandTitleWithVerifiedIconText(
                     title: 'Beverages',
                     brandTextSize: TextSizes.large,
                   ),

@@ -14,12 +14,12 @@ class TSingleAddress extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return  TRoundedContainer(
-      padding: EdgeInsets.all(TSizes.md),
+      padding: const EdgeInsets.all(TSizes.md),
       width: double.infinity,
       showBorder: true,
       backgroundColor: selectedAddress ? TColors.primary.withValues(alpha: 0.5) : Colors.transparent ,
       borderColor: selectedAddress ? Colors.transparent : dark ? TColors.darkerGrey : TColors.grey ,
-      margin: EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
       child: Stack(
         children: [
           Positioned(
@@ -38,10 +38,10 @@ class TSingleAddress extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: TSizes.sm / 2,),
-              Text('(+880) 171 2004 187', maxLines: 1, overflow: TextOverflow.ellipsis,),
-              SizedBox(height: TSizes.sm / 2,),
-              Text('411621/1 Zigatola New Road, Dhanmondi, Dhaka, Bangladesh',softWrap: true,),
+              const SizedBox(height: TSizes.sm / 2,),
+              const Text('(+880) 171 2004 187', maxLines: 1, overflow: TextOverflow.ellipsis,),
+              const SizedBox(height: TSizes.sm / 2,),
+              const Text('411621/1 Zigatola New Road, Dhanmondi, Dhaka, Bangladesh',softWrap: true,),
             ],
           )
         ],

@@ -14,26 +14,26 @@ class ProductReviewsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       /// --- app bar
-      appBar: TAppBar(title: Text('Reviews & Ratings'),showBackArrow: true,),
+      appBar: const TAppBar(title: Text('Reviews & Ratings'),showBackArrow: true,),
 
       body: SingleChildScrollView(
         child: Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              Text('Ratings nd reviews are verified and re from people who use the same type of device tht you use.'),
-                SizedBox(height: TSizes.spaceBtwItems,),
+              const Text('Ratings nd reviews are verified and re from people who use the same type of device tht you use.'),
+                const SizedBox(height: TSizes.spaceBtwItems,),
 
                 /// --- Overall Product Ratings
-                TOverallProductRating(),
-                TRatingBarIndicator(rating: 3.5,),
+                const TOverallProductRating(),
+                const TRatingBarIndicator(rating: 3.5,),
                 Text('12,611',style: Theme.of(context).textTheme.bodySmall,),
-                SizedBox(height: TSizes.spaceBtwSections,),
+                const SizedBox(height: TSizes.spaceBtwSections,),
 
 
-                UserReviewCard(),
-                UserReviewCard(),
-                UserReviewCard(),
+                const UserReviewCard(),
+                const UserReviewCard(),
+                const UserReviewCard(),
 
             ],
           ),

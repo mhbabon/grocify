@@ -30,20 +30,20 @@ class CheckoutScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(TSizes.defaultSpace),
+            padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
               children: [
                 /// --- Items in Cart
-                TCartItems(
+                const TCartItems(
                   showAddRemoveButtons: false,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: TSizes.spaceBtwSections,
                 ),
 
                 /// --- Coupon TextField
-                TCouponCode(),
-                SizedBox(
+                const TCouponCode(),
+                const SizedBox(
                   height: TSizes.spaceBtwSections,
                 ),
 
@@ -51,9 +51,9 @@ class CheckoutScreen extends StatelessWidget {
 
                 TRoundedContainer(
                   showBorder: true,
-                  padding: EdgeInsets.all(TSizes.md),
+                  padding: const EdgeInsets.all(TSizes.md),
                   backgroundColor: dark ? TColors.black : TColors.white,
-                  child: Column(
+                  child: const Column(
                     children: [
                       /// --- Pricing
                       TBillingAmountSection(),
@@ -93,9 +93,9 @@ class CheckoutScreen extends StatelessWidget {
                     image: TImages.successfulPaymentIcon,
                     title: 'Payment Success!',
                     subTitle: 'Your item will be shipped soon!',
-                    onPressed: () => Get.offAll(() => NavigationMenu()),
+                    onPressed: () => Get.offAll(() => const NavigationMenu()),
                   )),
-              child: Text(' Checkout \$48.00')),
+              child: const Text(' Checkout \$48.00')),
         ));
   }
 }

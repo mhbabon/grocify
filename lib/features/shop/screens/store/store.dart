@@ -46,21 +46,21 @@ class StoreScreen extends StatelessWidget {
                         : TColors.white,
                     expandedHeight: 440,
                     flexibleSpace: Padding(
-                      padding: EdgeInsets.all(TSizes.defaultSpace),
+                      padding: const EdgeInsets.all(TSizes.defaultSpace),
                       child: ListView(
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         children: [
-                          SizedBox(
+                        const  SizedBox(
                             height: TSizes.spaceBtwItems,
                           ),
-                          TSearchContainer(
+                          const TSearchContainer(
                             text: 'Search in Store',
                             showBorder: true,
                             showBackground: false,
                             padding: EdgeInsets.zero,
                           ),
-                          SizedBox(
+                        const  SizedBox(
                             height: TSizes.spaceBtwSections,
                           ),
 
@@ -68,7 +68,7 @@ class StoreScreen extends StatelessWidget {
                           TSectionHeading(
                             title: 'Feature Categories',
                             showActionButton: true,
-                            onPressed: () =>Get.to(() => AllBrandsScreen()),
+                            onPressed: () =>Get.to(() => const AllBrandsScreen()),
                           ),
                           const SizedBox(
                             height: TSizes.spaceBtwItems / 1.5,
@@ -78,7 +78,7 @@ class StoreScreen extends StatelessWidget {
                               itemCount: 4,
                               mainAxisExtent: 80,
                               itemBuilder: (_, index) {
-                                return TBrandCard(
+                                return const TBrandCard(
                                   showBorder: false,
                                 );
                               })
@@ -88,7 +88,7 @@ class StoreScreen extends StatelessWidget {
 
                     /// Tabs---
 
-                    bottom: TTabBar(tabs: [
+                    bottom: const TTabBar(tabs: [
                       Tab(
                         child: Text('Vegetable'),
                       ),
@@ -107,7 +107,7 @@ class StoreScreen extends StatelessWidget {
                     ])),
               ];
             },
-            body: TabBarView(children: [
+            body: const TabBarView(children: [
               TCategoryTab(),
               TCategoryTab(),
               TCategoryTab(),

@@ -13,28 +13,28 @@ class TCategoryTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       children: [
         Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
               /// --- Brands ---------------
-              TBrandShowcase(
+              const TBrandShowcase(
                 images: [
                   TImages.productImage1,
                   TImages.productImage1,
                   TImages.productImage1
                 ],
               ),
-              TBrandShowcase(
+              const TBrandShowcase(
                 images: [
                   TImages.productImage1,
                   TImages.productImage1,
                   TImages.productImage1
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 
@@ -43,14 +43,14 @@ class TCategoryTab extends StatelessWidget {
                 title: 'You might like',
                 onPressed: () {},
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
 
               TGridLayout(
                   itemCount: 4,
-                  itemBuilder: (_, index) => TProductCardVertical()),
-              SizedBox(
+                  itemBuilder: (_, index) => const TProductCardVertical()),
+              const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
             ],

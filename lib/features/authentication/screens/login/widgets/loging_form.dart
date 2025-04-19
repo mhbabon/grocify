@@ -25,7 +25,7 @@ class TLogingForm extends StatelessWidget {
             children: [
               /// Email
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.email_outlined),
                   labelText: TTexts.email,
                 ),
@@ -36,7 +36,7 @@ class TLogingForm extends StatelessWidget {
 
               /// Password
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Iconsax.password_check),
                     labelText: TTexts.password,
                     suffixIcon: Icon(Iconsax.eye_slash)),
@@ -58,8 +58,8 @@ class TLogingForm extends StatelessWidget {
 
                   /// Forget Password
                   TextButton(
-                      onPressed: () => Get.to(() => ForgetPassword()),
-                      child: Text(TTexts.forgetPassword))
+                      onPressed: () => Get.to(() => const ForgetPassword()),
+                      child: const Text(TTexts.forgetPassword))
                 ],
               ),
               const SizedBox(height: TSizes.spaceBtwSections),
@@ -68,8 +68,8 @@ class TLogingForm extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(()=> NavigationMenu()),
-                  child: Text(TTexts.signIn),
+                  onPressed: () => Get.to(()=> const NavigationMenu()),
+                  child: const Text(TTexts.signIn),
                 ),
               ),
               const SizedBox(height: TSizes.spaceBtwItems),
@@ -78,8 +78,8 @@ class TLogingForm extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                  onPressed: () => Get.to(() => SignupScreen()),
-                  child: Text(TTexts.createAccount),
+                  onPressed: () => Get.to(() => const SignupScreen()),
+                  child: const Text(TTexts.createAccount),
                 ),
               )
             ],

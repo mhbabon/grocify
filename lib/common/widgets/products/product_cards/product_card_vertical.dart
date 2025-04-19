@@ -26,7 +26,7 @@ class TProductCardVertical extends StatelessWidget {
       onTap: () => Get.to(() => const ProductDetailScreen()),
       child: Container(
         width: 180,
-        padding: EdgeInsets.all(1),
+        padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
             boxShadow: [TShadowStyle.verticalProductShadow],
             borderRadius: BorderRadius.circular(TSizes.productImageRadius),
@@ -40,7 +40,7 @@ class TProductCardVertical extends StatelessWidget {
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
                 children: [
-                  TRoundedImage(
+                  const TRoundedImage(
                     padding: EdgeInsets.only(top: 35),
                     imageurl: TImages.productImage1,
                     applyImageRadius: true,
@@ -63,7 +63,7 @@ class TProductCardVertical extends StatelessWidget {
                   ),
 
                   /// --- Favourite Icon Button
-                  Positioned(
+                  const Positioned(
                       top: 0,
                       right: 0,
                       child: TCircularIcon(
@@ -78,7 +78,7 @@ class TProductCardVertical extends StatelessWidget {
             ),
 
             ///  --- Details
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,14 +97,14 @@ class TProductCardVertical extends StatelessWidget {
               ),
             ),
 
-            Spacer(),
+            const Spacer(),
 
             /// ---- Price row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: TSizes.sm),
+                const Padding(
+                  padding: EdgeInsets.only(left: TSizes.sm),
                   child: TProductPriceText(
                     price: '12.0',
                   ),
@@ -117,7 +117,7 @@ class TProductCardVertical extends StatelessWidget {
                       bottomRight: Radius.circular(TSizes.productImageRadius),
                     ),
                   ),
-                  child: SizedBox(
+                  child: const SizedBox(
                       width: TSizes.iconLg * 1.2,
                       height: TSizes.iconLg * 1.2,
                       child: Center(

@@ -24,18 +24,18 @@ class SuccessScreen extends StatelessWidget {
 
               ///  Image
               Image(image: AssetImage(image),width: THelperFunctions.screenWidth() *0.6,),
-              SizedBox(height: TSizes.spaceBtwSections,),
+              const SizedBox(height: TSizes.spaceBtwSections,),
 
 
               ///   Title & SubTitle
               Text(title,style: Theme.of(context).textTheme.headlineMedium,textAlign: TextAlign.center,),
-              SizedBox(height: TSizes.spaceBtwSections,),
+              const SizedBox(height: TSizes.spaceBtwSections,),
               Text(subTitle,style: Theme.of(context).textTheme.labelMedium,textAlign: TextAlign.center,),
-              SizedBox(height: TSizes.spaceBtwSections,),
+              const SizedBox(height: TSizes.spaceBtwSections,),
 
 
               ///   Buttons
-              SizedBox(width: double.infinity,child:ElevatedButton(onPressed: () => Get.to(()=> HomeScreen()) , child: const Text(TTexts.tContinue)) ,),
+              SizedBox(width: double.infinity,child:ElevatedButton(onPressed: () => Get.to(()=> const HomeScreen()) , child: const Text(TTexts.tContinue)) ,),
 
 
             ],

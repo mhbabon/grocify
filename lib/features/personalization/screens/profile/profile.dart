@@ -13,12 +13,12 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: TAppBar(showBackArrow: true, title: Text('Profile')),
+      appBar: const TAppBar(showBackArrow: true, title: Text('Profile')),
 
       /// -- Body
       body: SingleChildScrollView(
         child: Padding(
-            padding: EdgeInsets.all(TSizes.defaultSpace),
+            padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
               children: [
                 /// -- Profile Picture
@@ -27,31 +27,31 @@ class ProfileScreen extends StatelessWidget {
                   width: double.infinity,
                   child: Column(
                     children: [
-                      TCircularImage(image: TImages.user,width: 80,height: 80,),
-                      TextButton(onPressed: (){}, child: Text('Change Profile Picture')),
+                      const TCircularImage(image: TImages.user,width: 80,height: 80,),
+                      TextButton(onPressed: (){}, child: const Text('Change Profile Picture')),
                     ],
                   ),
                 ),
 
                 /// -- Details
-                SizedBox(height: TSizes.spaceBtwItems / 2,),
-                Divider(),
-                SizedBox(height: TSizes.spaceBtwItems,),
+                const SizedBox(height: TSizes.spaceBtwItems / 2,),
+                const Divider(),
+                const SizedBox(height: TSizes.spaceBtwItems,),
 
                 /// -- Heading Profile Info
-                TSectionHeading(title: 'Profile Information',showActionButton: false, ),
-                SizedBox(height: TSizes.spaceBtwItems,),
+                const TSectionHeading(title: 'Profile Information',showActionButton: false, ),
+                const SizedBox(height: TSizes.spaceBtwItems,),
 
                 TProfileMenu( title: 'Name', value: 'Dart Dare Devil',onPressed: () {},),
                 TProfileMenu( title: 'Username', value: 'dart_dare_devil',onPressed: () {},),
 
-                SizedBox(height: TSizes.spaceBtwItems ,),
-                Divider(),
-                SizedBox(height: TSizes.spaceBtwItems,),
+                const SizedBox(height: TSizes.spaceBtwItems ,),
+                const Divider(),
+                const SizedBox(height: TSizes.spaceBtwItems,),
 
                 /// -- Heading Personal Info
-                TSectionHeading(title: 'Profile Information',showActionButton: false, ),
-                SizedBox(height: TSizes.spaceBtwItems,),
+                const TSectionHeading(title: 'Profile Information',showActionButton: false, ),
+                const SizedBox(height: TSizes.spaceBtwItems,),
 
 
                 TProfileMenu( title: 'User ID', value: '12004',icon: Iconsax.copy, onPressed: () {},),
@@ -59,13 +59,13 @@ class ProfileScreen extends StatelessWidget {
                 TProfileMenu( title: 'Phone Number', value: '+8801712-004187', onPressed: () {},),
                 TProfileMenu( title: 'Gender', value: 'Male', onPressed: () {},),
                 TProfileMenu( title: 'Date of Birth', value: '29 April 2002', onPressed: () {},),
-                Divider(),
-                SizedBox(height: TSizes.spaceBtwItems,),
+                const Divider(),
+                const SizedBox(height: TSizes.spaceBtwItems,),
 
 
                 Center(
                   child: TextButton(onPressed: () {},
-                      child: Text('Close Account',style: TextStyle(color: Colors.red),)),
+                      child: const Text('Close Account',style: TextStyle(color: Colors.red),)),
                 )
 
               ],
