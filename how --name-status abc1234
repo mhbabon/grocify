@@ -1,0 +1,74 @@
+[33mcommit 5616de412d5b5dee54a615d47b7a1708891b0637[m
+Author: Mehedi Hasan <mhbabon.bd@gmail.com>
+Date:   Tue Apr 8 01:25:24 2025 +0600
+
+    Categories
+    
+    Profile Section
+    
+    Its a design of profile edit section or profile information section with stateless widget. There menu section is a custom menu build.
+
+ delete mode 100644 lib/features/personalization/screens/profile/widgets/profile.dart
+
+[33mcommit 47530bb798f0535f0c30be0e737c2e9220b9b9a2[m[33m ([m[1;31morigin/others[m[33m)[m
+Author: Mehedi Hasan <mhbabon.bd@gmail.com>
+Date:   Wed Feb 19 22:35:37 2025 +0600
+
+    Refactor : Remove files Windows, Linux, MacOS
+
+ delete mode 100644 linux/.gitignore
+ delete mode 100644 linux/CMakeLists.txt
+ delete mode 100644 linux/flutter/CMakeLists.txt
+ delete mode 100644 linux/flutter/generated_plugin_registrant.cc
+ delete mode 100644 linux/flutter/generated_plugin_registrant.h
+ delete mode 100644 linux/flutter/generated_plugins.cmake
+ delete mode 100644 linux/runner/CMakeLists.txt
+ delete mode 100644 linux/runner/main.cc
+ delete mode 100644 linux/runner/my_application.cc
+ delete mode 100644 linux/runner/my_application.h
+ delete mode 100644 macos/.gitignore
+ delete mode 100644 macos/Flutter/Flutter-Debug.xcconfig
+ delete mode 100644 macos/Flutter/Flutter-Release.xcconfig
+ delete mode 100644 macos/Flutter/GeneratedPluginRegistrant.swift
+ delete mode 100644 macos/Runner.xcodeproj/project.pbxproj
+ delete mode 100644 macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+ delete mode 100644 macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+ delete mode 100644 macos/Runner.xcworkspace/contents.xcworkspacedata
+ delete mode 100644 macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+ delete mode 100644 macos/Runner/AppDelegate.swift
+ delete mode 100644 macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+ delete mode 100644 macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png
+ delete mode 100644 macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png
+ delete mode 100644 macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png
+ delete mode 100644 macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png
+ delete mode 100644 macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png
+ delete mode 100644 macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png
+ delete mode 100644 macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png
+ delete mode 100644 macos/Runner/Base.lproj/MainMenu.xib
+ delete mode 100644 macos/Runner/Configs/AppInfo.xcconfig
+ delete mode 100644 macos/Runner/Configs/Debug.xcconfig
+ delete mode 100644 macos/Runner/Configs/Release.xcconfig
+ delete mode 100644 macos/Runner/Configs/Warnings.xcconfig
+ delete mode 100644 macos/Runner/DebugProfile.entitlements
+ delete mode 100644 macos/Runner/Info.plist
+ delete mode 100644 macos/Runner/MainFlutterWindow.swift
+ delete mode 100644 macos/Runner/Release.entitlements
+ delete mode 100644 macos/RunnerTests/RunnerTests.swift
+ delete mode 100644 windows/.gitignore
+ delete mode 100644 windows/CMakeLists.txt
+ delete mode 100644 windows/flutter/CMakeLists.txt
+ delete mode 100644 windows/flutter/generated_plugin_registrant.cc
+ delete mode 100644 windows/flutter/generated_plugin_registrant.h
+ delete mode 100644 windows/flutter/generated_plugins.cmake
+ delete mode 100644 windows/runner/CMakeLists.txt
+ delete mode 100644 windows/runner/Runner.rc
+ delete mode 100644 windows/runner/flutter_window.cpp
+ delete mode 100644 windows/runner/flutter_window.h
+ delete mode 100644 windows/runner/main.cpp
+ delete mode 100644 windows/runner/resource.h
+ delete mode 100644 windows/runner/resources/app_icon.ico
+ delete mode 100644 windows/runner/runner.exe.manifest
+ delete mode 100644 windows/runner/utils.cpp
+ delete mode 100644 windows/runner/utils.h
+ delete mode 100644 windows/runner/win32_window.cpp
+ delete mode 100644 windows/runner/win32_window.h
