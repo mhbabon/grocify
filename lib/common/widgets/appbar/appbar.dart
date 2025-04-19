@@ -29,7 +29,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.symmetric(horizontal: TSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
-        leading: showBackArrow ? BackArrowButton(dark: dark) : leadingIcon != null ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon)) : null,
+        leading: showBackArrow ? BackArrowButton(dark: dark) : leadingIcon != null ? LeadingIconButton(leadingOnPressed: leadingOnPressed, leadingIcon: leadingIcon) : null,
         title: title,
         actions: actions,
       ),
@@ -40,6 +40,22 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => Size.fromHeight(TDeviceUtils.getAppBarHeight());
 }
 
+class LeadingIconButton extends StatelessWidget {
+  const LeadingIconButton({
+    super.key,
+    required this.leadingOnPressed,
+    required this.leadingIcon,
+  });
+
+  final VoidCallback? leadingOnPressed;
+  final IconData? leadingIcon;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon));
+  }
+}
+
 class BackArrowButton extends StatelessWidget {
   const BackArrowButton({
     super.key,
@@ -48,8 +64,9 @@ class BackArrowButton extends StatelessWidget {
 
   final bool dark;
 
+
   @override
   Widget build(BuildContext context) {
-    return IconButton(onPressed: () => Get.back(), icon: Icon(Iconsax.arrow_left, color: dark ? TColors.white : TColors.dark,));
+    return  IconButton(onPressed: () => Get.back(), icon: Icon(Iconsax.arrow_left, color: dark ? TColors.white : TColors.dark,));
   }
 }
