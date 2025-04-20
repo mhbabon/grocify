@@ -47,10 +47,12 @@ class TBillingAddressSection extends StatelessWidget {
             const SizedBox(
               width: TSizes.spaceBtwItems,
             ),
-            Text(
-              '411621/1, Dhanmondi, Dhaka, Bangladesh',
-              style: Theme.of(context).textTheme.bodyMedium,
-              softWrap: true,
+            Expanded(
+              child: Text(
+                '411621/1, Dhanmondi, Dhaka, Bangladesh',
+                style: Theme.of(context).textTheme.bodyMedium,
+                softWrap: true,
+              ),
             ),
           ],
         )
