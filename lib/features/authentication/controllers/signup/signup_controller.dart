@@ -36,6 +36,10 @@ class SignupController extends GetxController {
       if (!isConnected) {
         /// remove loader
         TFullScreenLoader.stopLoading();
+        TLoaders.errorSnackBar(
+            title: 'CONNECTION ERROR',
+            message: 'INTERNET CONNECTION REQUIRED FOR AUTHENTICATION'
+        );
         return;
       }
 
