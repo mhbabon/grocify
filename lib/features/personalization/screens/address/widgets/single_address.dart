@@ -13,8 +13,17 @@ class TSingleAddress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    final borderColor = selectedAddress ? (dark ? TColors.darkerGrey : TColors.grey) : Colors.transparent;
-    final iconColor = selectedAddress ? (dark ? TColors.light : TColors.dark ): null;
+
+    late final Color borderColor;
+    late final Color iconColor;
+
+    if (selectedAddress) {
+      borderColor = dark ? TColors.darkerGrey : TColors.grey;
+      iconColor = dark ? TColors.light : TColors.dark;
+    } else {
+      borderColor = Colors.transparent;
+    }
+
 
     return  TRoundedContainer(
       padding: const EdgeInsets.all(TSizes.md),
