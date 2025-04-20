@@ -17,19 +17,29 @@ class TBrandTitleText extends StatelessWidget {
   final TextAlign? textAlign;
   final TextSizes brandTextSize;
 
+
+
+
+
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
+    late final TextStyle appliedStyle;
+
+    if (brandTextSize == TextSizes.small) {
+      appliedStyle = textTheme.labelMedium!.apply(color: color);
+    } else if (brandTextSize == TextSizes.medium) {
+      appliedStyle = textTheme.bodyLarge!.apply(color: color);
+    } else {
+      appliedStyle = textTheme.titleLarge!.apply(color: color);
+    }
+
     return Text(
       title,
       maxLines: maxLines,
       overflow: TextOverflow.ellipsis,
-      style: brandTextSize == TextSizes.small
-          ? Theme.of(context).textTheme.labelMedium!.apply(color: color)
-          : brandTextSize == TextSizes.medium
-              ? Theme.of(context).textTheme.bodyLarge!.apply(color: color)
-              : brandTextSize == TextSizes.large
-                  ? Theme.of(context).textTheme.titleLarge!.apply(color: color)
-                  : Theme.of(context).textTheme.bodyMedium!.apply(color: color),
+      style: appliedStyle
     );
   }
 }
