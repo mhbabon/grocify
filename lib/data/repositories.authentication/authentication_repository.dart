@@ -18,6 +18,7 @@ class AuthenticationRepository extends GetxController {
   /// Variable
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
+  final String text ='Something went wrong. Please try again';
 
   /// Call from main.dart on app launch
   @override
@@ -65,7 +66,7 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw text;
     }
   }
 
@@ -82,7 +83,7 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw text;
     }
   }
 
@@ -113,7 +114,7 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw text;
     }
   }
 
