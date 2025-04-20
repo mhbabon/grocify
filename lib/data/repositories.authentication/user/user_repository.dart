@@ -2,9 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:grocify/features/personalization/models/user_model.dart';
-import 'package:grocify/utils/exceptions/tfirebase_exception.dart';
-import 'package:grocify/utils/exceptions/tformat_exception.dart';
-import 'package:grocify/utils/exceptions/tplatform_exception.dart';
+import 'package:grocify/utils/exceptions/firebase_exceptions.dart';
+import 'package:grocify/utils/exceptions/format_exceptions.dart';
+import 'package:grocify/utils/exceptions/platform_exceptions.dart';
+
 
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
@@ -21,7 +22,7 @@ class UserRepository extends GetxController {
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      throw  TFormatException();
+      throw  const TFormatException();
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
