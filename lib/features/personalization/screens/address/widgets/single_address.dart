@@ -13,12 +13,15 @@ class TSingleAddress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+    final borderColor = selectedAddress ? (dark ? TColors.darkerGrey : TColors.grey) : Colors.transparent;
+    final iconColor = selectedAddress ? (dark ? TColors.light : TColors.dark ): null;
+
     return  TRoundedContainer(
       padding: const EdgeInsets.all(TSizes.md),
       width: double.infinity,
       showBorder: true,
       backgroundColor: selectedAddress ? TColors.primary.withValues(alpha: 0.5) : Colors.transparent ,
-      borderColor: selectedAddress ? Colors.transparent : dark ? TColors.darkerGrey : TColors.grey ,
+      borderColor: borderColor ,
       margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
       child: Stack(
         children: [
@@ -26,7 +29,7 @@ class TSingleAddress extends StatelessWidget {
             top: 0,
             right: 5,
             child: Icon(selectedAddress ? Iconsax.tick_circle5 : null,
-            color: selectedAddress ? dark ? TColors.light : TColors.dark : null,
+            color: iconColor ,
             ),
           ),
           Column(
