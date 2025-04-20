@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:grocify/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:grocify/features/authentication/screens/signup/widgets/term_condition_checkbox.dart';
-import 'package:grocify/features/authentication/signup/signup_controller.dart';
+
 import 'package:grocify/utils/validators/validation.dart';
 import 'package:iconsax/iconsax.dart';
 

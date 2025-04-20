@@ -21,7 +21,8 @@ class TSingleAddress extends StatelessWidget {
       borderColor = dark ? TColors.darkerGrey : TColors.grey;
       iconColor = dark ? TColors.light : TColors.dark;
     } else {
-      borderColor = Colors.transparent;
+      borderColor = Colors.grey;
+      iconColor = Colors.transparent;
     }
 
 
@@ -53,7 +54,10 @@ class TSingleAddress extends StatelessWidget {
               const SizedBox(height: TSizes.sm / 2,),
               const Text('(+880) 171 2004 187', maxLines: 1, overflow: TextOverflow.ellipsis,),
               const SizedBox(height: TSizes.sm / 2,),
-              const Text('411621/1 Zigatola New Road, Dhanmondi, Dhaka, Bangladesh',softWrap: true,),
+             const Padding(
+                padding:  EdgeInsets.all(2),
+                child: Expanded(child:  Text('411621/1 Zigatola New Road, Dhanmondi, Dhaka, Bangladesh',softWrap: true,)),
+              ),
             ],
           )
         ],

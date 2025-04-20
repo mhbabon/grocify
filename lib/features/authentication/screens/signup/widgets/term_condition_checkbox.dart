@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:grocify/features/authentication/signup/signup_controller.dart';
+import 'package:grocify/features/authentication/controllers/signup/signup_controller.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';

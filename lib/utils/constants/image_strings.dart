@@ -53,10 +53,11 @@ class TImages {
   static const String cloudUpLoadingAnimation = "assets/images/animations/cloud-uploading-animation.json";
   static const String loaderAnimation = "assets/images/animations/loader-animation.json";
 
-  // -- OnBoarding Texts
-  static const String onBoardingImage1 = "assets/images/on_boarding_images/sammy-line-searching.gif";
-  static const String onBoardingImage2 = "assets/images/on_boarding_images/sammy-line-shopping.gif";
-  static const String onBoardingImage3 = "assets/images/on_boarding_images/sammy-line-delivery.gif";
+  //--- Onboarding Section
+  static const String onboardingPayment = "assets/images/animations/onboarding_payment.json";
+  static const String onboardingChooseProduct = "assets/images/animations/onboarding_choose_product.json";
+  static const String onboardingDelivery = "assets/images/animations/onboarding_delivery.json";
+
 
   // -- Products
 
