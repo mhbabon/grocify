@@ -9,8 +9,36 @@ static String? validateEmptyText(String? fieldName,String? value) {
   return null;
 }
 
+  /// Username Validation
+  static String? validateUsername(String? userName){
+  if(userName == null || userName.isEmpty){
+    return 'Username is required.';
+    }
+
+  /// Define a regular expression pattern for the username
+    const pattern = r"^[a-zA-Z0-9_-]{3,20}$";
+
+  // Create a RegExp instance from the pattern for the username
+    final regex = (RegExp(pattern));
+
+    // Use the hasMatch method to check if the user matches the pattern
+    bool isValid = regex.hasMatch(userName);
+
+    // check if  the user name does not start or end with an underscore or hyphen
+    if(isValid){
+      isValid = !userName.startsWith('_') && !userName.startsWith('-') && !userName.endsWith('_') && !userName.endsWith('-');
+    }
+
+    if(!isValid){
+      return 'Username is not valid.';
+    }
+    return null;
+
+  }
 
 
+  ///---- Email Validation
+ ///
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return 'Email is required.';

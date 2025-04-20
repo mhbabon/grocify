@@ -18,7 +18,7 @@ class AuthenticationRepository extends GetxController {
   /// Variable
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
-  final String text ='Something went wrong. Please try again';
+  final String text = 'Something went wrong. Please try again';
 
   /// Call from main.dart on app launch
   @override
@@ -69,8 +69,6 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-
-
   /// [Email Authentication] - Register
   Future<UserCredential> registerWithEmailAndPassword(
       String email, String password) async {
@@ -110,19 +108,16 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// [ReAuthentication] -- ReAuthentication User
-/// [EmailAuthentication] -- Forget Password
-///
+  /// [EmailAuthentication] -- Forget Password
+  ///
 /*----------------------------- Federated identity & social sign-in ---------------------*/
 
-
-/// [Google Authentication] -Google
-/// [Facebook Authentication] -- facebook
-
+  /// [Google Authentication] -Google
+  /// [Facebook Authentication] -- facebook
 
 /*-----------------------------/end Federated identity & social sign-in ---------------------*/
 
-
-/// [Logout User]
+  /// [Logout User]
   Future<void> logout() async {
     try {
       await FirebaseAuth.instance.signOut();
@@ -140,5 +135,5 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-/// [Delete User]
+  /// [Delete User]
 }
