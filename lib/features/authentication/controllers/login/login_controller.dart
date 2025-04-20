@@ -20,7 +20,6 @@ class LoginController extends GetxController {
   @override
   void onInit() {
     email.text = localStorage.read('Remember_Me_Email');
-    password.text = localStorage.read('Remember_Me_Password');
     super.onInit();
   }
 
@@ -35,8 +34,13 @@ class LoginController extends GetxController {
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
         TFullScreenLoader.stopLoading();
+        TLoaders.errorSnackBar(
+            title: 'CONNECTION ERROR',
+            message: 'INTERNET CONNECTION REQUIRED FOR AUTHENTICATION'
+        );
         return;
       }
+
 
       // Form Validation
       if (!loginFormKey.currentState!.validate()) {
