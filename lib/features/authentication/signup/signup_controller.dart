@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
+import 'package:grocify/data/repositories.authentication/user/user_repository.dart';
+import 'package:grocify/features/authentication/screens/signup/verify_email.dart';
 import 'package:grocify/features/personalization/models/user_model.dart';
 import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/helpers/network_manager.dart';
@@ -12,7 +14,7 @@ class SignupController extends GetxController {
 
   /// Variables
   final hidePassword = true.obs;
-  final privacyPolicy = true.obs;
+  final privacyPolicy = false.obs;
   final email = TextEditingController();
   final userName = TextEditingController();
   final firstName = TextEditingController();
@@ -32,11 +34,15 @@ class SignupController extends GetxController {
       /// Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
+        /// remove loader
+        TFullScreenLoader.stopLoading();
         return;
       }
 
       /// From Validation
       if (!signupFormkey.currentState!.validate()) {
+        /// remove loader
+        TFullScreenLoader.stopLoading();
         return;
       }
 
@@ -45,7 +51,8 @@ class SignupController extends GetxController {
         TLoaders.warningSnackBar(
             title: 'Accept Privacy Policy',
             message:
-                'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.');
+                'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.'
+        );
 
         return;
       }
@@ -68,14 +75,26 @@ class SignupController extends GetxController {
         profilePicture: '',
       );
 
-      /// SHOW SUCCESS MESSAGE
-      /// MOVE TO VERIFY EMAIL SCREEN
-    } catch (e) {
-      // show some generic error to the user
-      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-    } finally {
+      final userRepository = Get.put(UserRepository());
+      await userRepository.saveUserRecord(newUser);
+
       /// remove loader
       TFullScreenLoader.stopLoading();
+
+      /// SHOW SUCCESS MESSAGE
+      TLoaders.successSnackBar(title: 'Congratulation', message: 'Your account has been created! Verify email to continue');
+
+
+      /// MOVE TO VERIFY EMAIL SCREEN
+
+      Get.to(() =>  VerifyEmailScreen(email: email.text.trim()));
+
+
+    } catch (e) {
+      /// remove loader
+      TFullScreenLoader.stopLoading();
+      // show some generic error to the user
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     }
   }
 }

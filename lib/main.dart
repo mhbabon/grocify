@@ -9,9 +9,6 @@ import 'firebase_options.dart';
 import 'app.dart';
 
 Future<void> main() async {
-
-
-
   final WidgetsBinding widgetBinding = WidgetsFlutterBinding.ensureInitialized();
 
 /// GetX Local storage
