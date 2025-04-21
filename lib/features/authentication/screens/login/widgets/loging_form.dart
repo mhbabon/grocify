@@ -38,23 +38,7 @@ class TLogingForm extends StatelessWidget {
               ),
 
               ///     Password
-              Obx(
-                    () => TextFormField(
-                  controller: controller.password,
-                  validator: (value) => TValidator.validatePassword(value),
-                  obscureText: controller.hidePassword.value,
-                  decoration: InputDecoration(
-                    labelText: TTexts.password,
-                    prefixIcon: const Icon(Iconsax.password_check),
-                    suffixIcon: IconButton(
-                        onPressed: () => controller.hidePassword.value =
-                        !controller.hidePassword.value,
-                        icon: Icon(controller.hidePassword.value
-                            ? Iconsax.eye_slash
-                            : Iconsax.eye)),
-                  ),
-                ),
-              ),
+              PasswordField(controller: controller),
 
               const SizedBox(
                 height: TSizes.spaceBtwInputFields / 4,
@@ -103,5 +87,35 @@ class TLogingForm extends StatelessWidget {
             ],
           ),
         ));
+  }
+}
+
+class PasswordField extends StatelessWidget {
+  const PasswordField({
+    super.key,
+    required this.controller,
+  });
+
+  final LoginController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(
+          () => TextFormField(
+        controller: controller.password,
+        validator: (value) => TValidator.validatePassword(value),
+        obscureText: controller.hidePassword.value,
+        decoration: InputDecoration(
+          labelText: TTexts.password,
+          prefixIcon: const Icon(Iconsax.password_check),
+          suffixIcon: IconButton(
+              onPressed: () => controller.hidePassword.value =
+              !controller.hidePassword.value,
+              icon: Icon(controller.hidePassword.value
+                  ? Iconsax.eye_slash
+                  : Iconsax.eye)),
+        ),
+      ),
+    );
   }
 }

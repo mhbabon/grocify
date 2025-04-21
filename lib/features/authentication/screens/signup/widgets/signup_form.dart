@@ -4,7 +4,6 @@ import 'package:grocify/features/authentication/controllers/signup/signup_contro
 import 'package:grocify/features/authentication/screens/signup/widgets/term_condition_checkbox.dart';
 import 'package:grocify/utils/validators/validation.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 
