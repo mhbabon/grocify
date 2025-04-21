@@ -39,16 +39,14 @@ class UserModel {
   }
 
   /// to create an empty user model.
-  static UserModel empty() =>
-      UserModel(
-          id: '',
-          firstName: '',
-          lastName: '',
-          userName: '',
-          email: '',
-          phoneNumber: '',
-          profilePicture: ''
-      );
+  static UserModel empty() => UserModel(
+      id: '',
+      firstName: '',
+      lastName: '',
+      userName: '',
+      email: '',
+      phoneNumber: '',
+      profilePicture: '');
 
   /// Convert Model to Json structure for storing data in firebase
   Map<String, dynamic> toJson() {
@@ -62,10 +60,9 @@ class UserModel {
     };
   }
 
-
   /// Factory method to create a UserModel from a Firebase document snapshot
   factory UserModel.fromSnapshot(
-      DocumentSnapshot<Map<String, dynamic>> document){
+      DocumentSnapshot<Map<String, dynamic>> document) {
     if (document.data() != null) {
       final data = document.data()!;
       return UserModel(
