@@ -38,8 +38,7 @@ class SignupController extends GetxController {
         TFullScreenLoader.stopLoading();
         TLoaders.errorSnackBar(
             title: 'CONNECTION ERROR',
-            message: 'INTERNET CONNECTION REQUIRED FOR AUTHENTICATION'
-        );
+            message: 'INTERNET CONNECTION REQUIRED FOR AUTHENTICATION');
         return;
       }
 
@@ -55,8 +54,7 @@ class SignupController extends GetxController {
         TLoaders.warningSnackBar(
             title: 'Accept Privacy Policy',
             message:
-                'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.'
-        );
+                'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.');
 
         return;
       }
@@ -86,14 +84,13 @@ class SignupController extends GetxController {
       TFullScreenLoader.stopLoading();
 
       /// SHOW SUCCESS MESSAGE
-      TLoaders.successSnackBar(title: 'Congratulation', message: 'Your account has been created! Verify email to continue');
-
+      TLoaders.successSnackBar(
+          title: 'Congratulation',
+          message: 'Your account has been created! Verify email to continue');
 
       /// MOVE TO VERIFY EMAIL SCREEN
 
-      Get.to(() =>  VerifyEmailScreen(email: email.text.trim()));
-
-
+      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       /// remove loader
       TFullScreenLoader.stopLoading();
