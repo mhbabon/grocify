@@ -39,7 +39,7 @@ class TLogingForm extends StatelessWidget {
 
               ///     Password
               Obx(
-                () => TextFormField(
+                    () => TextFormField(
                   controller: controller.password,
                   validator: (value) => TValidator.validatePassword(value),
                   obscureText: controller.hidePassword.value,
@@ -48,13 +48,14 @@ class TLogingForm extends StatelessWidget {
                     prefixIcon: const Icon(Iconsax.password_check),
                     suffixIcon: IconButton(
                         onPressed: () => controller.hidePassword.value =
-                            !controller.hidePassword.value,
+                        !controller.hidePassword.value,
                         icon: Icon(controller.hidePassword.value
                             ? Iconsax.eye_slash
                             : Iconsax.eye)),
                   ),
                 ),
               ),
+
               const SizedBox(
                 height: TSizes.spaceBtwInputFields / 4,
               ),
@@ -68,7 +69,7 @@ class TLogingForm extends StatelessWidget {
                       Obx(() => Checkbox(
                           value: controller.rememberMe.value,
                           onChanged: (value) => controller.rememberMe.value =
-                              !controller.rememberMe.value)),
+                          !controller.rememberMe.value)),
                       const Text(TTexts.rememberMe),
                     ],
                   ),
