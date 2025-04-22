@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grocify/features/authentication/screens/password_configuration/reset_password.dart';
+import 'package:grocify/features/authentication/controllers/forget_password/forget_password_controller.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 import 'package:grocify/utils/constants/text_strings.dart';
+import 'package:grocify/utils/validators/validation.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ForgetPasswordController());
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -33,10 +35,15 @@ class ForgetPassword extends StatelessWidget {
             ),
 
             ///  Text Field
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: TTexts.email,
-                prefixIcon: Icon(Icons.email_outlined),
+            Form(
+              key: controller.forgetPasswordFormKey,
+              child: TextFormField(
+                controller: controller.email,
+                validator: TValidator.validateEmail,
+                decoration: const InputDecoration(
+                  labelText: TTexts.email,
+                  prefixIcon: Icon(Icons.email_outlined),
+                ),
               ),
             ),
             const SizedBox(
@@ -47,7 +54,7 @@ class ForgetPassword extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () => Get.off(() => const ResetPassword()),
+                    onPressed: () => controller.sendPasswordResetEmail(),
                     child: const Text(TTexts.submit)))
           ],
         ),
