@@ -111,25 +111,10 @@ class AuthenticationRepository extends GetxController {
 
   /// [ReAuthentication] -- ReAuthentication User
   /// [EmailAuthentication] -- Forget Password
-  ///
-/*----------------------------- Federated identity & social sign-in ---------------------*/
 
-  /// [Google Authentication] -Google
-
-  Future<UserCredential?> signInWithGoogle() async {
+  Future<void> sendPasswordResetEmail(String email) async {
     try {
-      // Trigger the authentication flow
-      final GoogleSignInAccount ? userAccount = await GoogleSignIn().signIn();
-
-      // Obtain the auth details from the request
-      final GoogleSignInAuthentication? googleAuth = await userAccount?.authentication;
-
-      // Create a new credential
-      final credentials = GoogleAuthProvider.credential(accessToken:  googleAuth?.accessToken, idToken: googleAuth?.idToken);
-
-      // Once Signed in, return the userCredential
-      return await _auth.signInWithCredential(credentials);
-
+      await _auth.sendPasswordResetEmail(email: email);
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
@@ -139,10 +124,44 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      if(kDebugMode) print('Something went wrong: $e');
+      throw text;
+    }
+  }
+
+  ///
+/*----------------------------- Federated identity & social sign-in ---------------------*/
+
+  /// [Google Authentication] -Google
+
+  Future<UserCredential?> signInWithGoogle() async {
+    try {
+      // Trigger the authentication flow
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication? googleAuth =
+          await userAccount?.authentication;
+
+      // Create a new credential
+      final credentials = GoogleAuthProvider.credential(
+          accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+
+      // Once Signed in, return the userCredential
+      return await _auth.signInWithCredential(credentials);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      if (kDebugMode) print('Something went wrong: $e');
       return null;
     }
   }
+
   /// [Facebook Authentication] -- facebook
 
 /*-----------------------------/end Federated identity & social sign-in ---------------------*/
