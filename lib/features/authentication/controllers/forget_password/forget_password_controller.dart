@@ -18,6 +18,12 @@ class ForgetPasswordController extends GetxController {
   // Sen reset password email
   sendPasswordResetEmail() async {
     try {
+      if (!forgetPasswordFormKey.currentState!.validate()) {
+        /// remove loader
+        TFullScreenLoader.stopLoading();
+        return;
+      }
+
       TFullScreenLoader.openLoadingDialog(
           'Processing your request...', TImages.docerAnimation);
 
@@ -29,12 +35,6 @@ class ForgetPasswordController extends GetxController {
         TLoaders.errorSnackBar(
             title: 'CONNECTION ERROR',
             message: 'INTERNET CONNECTION REQUIRED FOR AUTHENTICATION');
-        return;
-      }
-
-      if (!forgetPasswordFormKey.currentState!.validate()) {
-        /// remove loader
-        TFullScreenLoader.stopLoading();
         return;
       }
 
@@ -55,7 +55,7 @@ class ForgetPasswordController extends GetxController {
     }
   }
 
-  // -------
+  // ------- Resend Reset Password Email
 
   resendPasswordResetEmail(String email) async {
     try {

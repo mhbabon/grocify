@@ -5,6 +5,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:grocify/data/repositories.authentication/user/user_repository.dart';
 import 'package:grocify/features/authentication/screens/login/login.dart';
 import 'package:grocify/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:grocify/features/authentication/screens/signup/verify_email.dart';
@@ -22,6 +23,9 @@ class AuthenticationRepository extends GetxController {
   final _auth = FirebaseAuth.instance;
   final String text = 'Something went wrong. Please try again';
 
+  // Get Authentication User Data
+  User? get authUser => _auth.currentUser;
+
   /// Call from main.dart on app launch
   @override
   void onReady() {
@@ -31,7 +35,7 @@ class AuthenticationRepository extends GetxController {
   }
 
   ///Function to show Relevant Screen
-  screenRedirect() async {
+   void screenRedirect() async {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailVerified) {
@@ -110,6 +114,28 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// [ReAuthentication] -- ReAuthentication User
+
+  Future<void> reAuthenticateWithEmailAndPassword(String email, String password) async {
+    try {
+      // create a credential
+      AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
+
+      // Re Authenticate
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw text;
+    }
+  }
+
+
   /// [EmailAuthentication] -- Forget Password
 
   Future<void> sendPasswordResetEmail(String email) async {
@@ -186,4 +212,21 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// [Delete User]
+
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance.removeUserRecord(_auth.currentUser!.uid);
+      await _auth.currentUser?.delete();
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw text;
+    }
+  }
 }
