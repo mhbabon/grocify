@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:grocify/data/repositories.authentication/user/user_repository.dart';
 import 'package:grocify/features/personalization/controllers/user_controller.dart';
-import 'package:grocify/features/personalization/screens/profile/profile.dart';
 import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/helpers/network_manager.dart';
 import 'package:grocify/utils/popups/full_screen_loader.dart';
@@ -65,11 +64,11 @@ Future<void> initializedNames() async{
      userController.user.value.lastName = lastName.text.trim();
 
      TFullScreenLoader.stopLoading();
-
+      Get.back(result: 'updated');
      TLoaders.successSnackBar(title: 'Congratulations', message: 'Your name has been updated. ');
 
      // Move previous Screen
-     Get.off(() =>const ProfileScreen());
+
    }catch (e){
      TFullScreenLoader.stopLoading();
      TLoaders.errorSnackBar(title: 'Oh Snap',message: e.toString());

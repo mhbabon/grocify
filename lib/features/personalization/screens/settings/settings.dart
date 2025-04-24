@@ -5,7 +5,7 @@ import 'package:grocify/common/widgets/custom_shapes/containers/primary_header_c
 import 'package:grocify/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:grocify/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:grocify/common/widgets/texts/section_heading.dart';
-import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
+import 'package:grocify/features/personalization/controllers/user_controller.dart';
 import 'package:grocify/features/personalization/screens/address/address.dart';
 import 'package:grocify/features/personalization/screens/profile/profile.dart';
 import 'package:grocify/features/shop/screens/cart/cart.dart';
@@ -21,6 +21,8 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -47,7 +49,13 @@ class SettingsScreen extends StatelessWidget {
                 // --- UserProfileCard
 
                 TUserProfileTile(
-                  onPressed: () => Get.to(() => const ProfileScreen()),
+                  onPressed: () async {
+                    // Navigate to ProfileScreen
+                    await Get.to(() => const ProfileScreen());
+                    // Update the user data after coming back to SettingsScreen
+                    UserController.instance.fetchUserRecord();
+                    UserController.instance.fetchUserProfileImage();
+                  },
                 ),
                 const SizedBox(
                   height: TSizes.spaceBtwSections,
@@ -154,7 +162,7 @@ class SettingsScreen extends StatelessWidget {
                     width: double.infinity,
                     child: OutlinedButton(
                         onPressed: () =>
-                            AuthenticationRepository.instance.logout(),
+                            controller.logoutAccountWarningPopup(),
                         child: const Text('Logout')),
                   ),
                   const SizedBox(

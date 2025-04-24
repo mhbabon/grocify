@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:grocify/common/widgets/images/t_circular_image.dart';
 import 'package:grocify/features/personalization/controllers/user_controller.dart';
 import 'package:grocify/utils/constants/colors.dart';
@@ -7,18 +8,46 @@ import 'package:iconsax/iconsax.dart';
 
 class TUserProfileTile extends StatelessWidget {
   const TUserProfileTile({
-    super.key, required this.onPressed,
+    super.key,
+    required this.onPressed,
   });
 
   final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
     final controller = UserController.instance;
-    return ListTile(
-      leading: const TCircularImage(image: TImages.user, width: 50, height: 50, padding: 0,),
-      title: Text(controller.user.value.fullName, style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white),),
-      subtitle: Text(controller.user.value.email, style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white),),
-      trailing: IconButton(onPressed: onPressed, icon: const Icon(Iconsax.edit, color: TColors.white,)),
-    );
+    return Obx(() {
+      final networkImage = controller.profileImageUrl.value;
+      final publicUrl = networkImage.isNotEmpty ? networkImage : TImages.user;
+
+      return ListTile(
+        leading: TCircularImage(
+          image: publicUrl,
+          isNetworkImage: true,
+          width: 50,
+          height: 50,
+          padding: 0,
+        ),
+        title: Text(
+          controller.user.value.fullName,
+          style: Theme.of(context)
+              .textTheme
+              .headlineSmall!
+              .apply(color: TColors.white),
+        ),
+        subtitle: Text(
+          controller.user.value.email,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium!
+              .apply(color: TColors.white),
+        ),
+        trailing: IconButton(
+          onPressed: onPressed,
+          icon: const Icon(Iconsax.edit, color: TColors.white),
+        ),
+      );
+    });
   }
 }
