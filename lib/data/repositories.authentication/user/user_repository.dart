@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
@@ -6,13 +7,19 @@ import 'package:grocify/features/personalization/models/user_model.dart';
 import 'package:grocify/utils/exceptions/firebase_exceptions.dart';
 import 'package:grocify/utils/exceptions/format_exceptions.dart';
 import 'package:grocify/utils/exceptions/platform_exceptions.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+final SupabaseClient supabase = Supabase.instance.client;
+
+
 
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
+  RxString profileImageUrl = ''.obs;
 
   final FirebaseFirestore _db = FirebaseFirestore.instance;
   final String text = 'Something went wrong. Please try again';
-
+   final userImageUrl = ''.obs; // using GetX
   /// Function to save user data too Firestore
   Future<void> saveUserRecord(UserModel user) async {
     try {
@@ -104,4 +111,34 @@ class UserRepository extends GetxController {
       throw text;
     }
   }
+
+
+ //Fetch user image  data from Firestore
+
+  Future<String> fetchUserProfileImage() async {
+    try {
+      final userId = FirebaseAuth.instance.currentUser?.uid;
+
+      if (userId == null) throw Exception("User not logged in");
+
+      final doc = await FirebaseFirestore.instance.collection('Users').doc(userId).get();
+
+      if (doc.exists) {
+        final imageUrl = doc.data()?['ProfilePicture'] ?? '';
+
+      //  print('Fetch user Profile Link UserRepository------------------------------------------ $imageUrl ');
+        return imageUrl;
+      } else {
+
+        throw Exception("User not found");
+      }
+    } catch (e) {
+      throw Exception("Failed to fetch user image: $e");
+    }
+  }
+
+
+
+
 }
+

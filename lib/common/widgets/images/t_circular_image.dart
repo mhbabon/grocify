@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:grocify/common/widgets/effect/shimmer.dart';
 import 'package:grocify/utils/constants/colors.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
@@ -23,6 +25,8 @@ class TCircularImage extends StatelessWidget {
   final Color? backgroundColor;
   final double width, height, padding;
 
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,11 +38,22 @@ class TCircularImage extends StatelessWidget {
               ? TColors.black
               : TColors.white),
           borderRadius: BorderRadius.circular(100)),
-      child: Image(
-        fit: fit,
-        image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
-        color: overlayColor,
-      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: Center(
+          child:  isNetworkImage ? CachedNetworkImage(
+            fit: fit,
+            color: overlayColor,
+            imageUrl: image,
+            progressIndicatorBuilder: (context, url, downloadProgress) => const TShimmerEffect(width: 55, height: 55),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ): Image(
+            fit: fit,
+            image: AssetImage(image) as ImageProvider,
+            color: overlayColor,
+          ),
+        ),
+      )
     );
   }
 }

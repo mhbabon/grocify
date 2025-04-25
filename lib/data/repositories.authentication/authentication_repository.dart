@@ -14,6 +14,7 @@ import 'package:grocify/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:grocify/utils/exceptions/firebase_exceptions.dart';
 import 'package:grocify/utils/exceptions/format_exceptions.dart';
 import 'package:grocify/utils/exceptions/platform_exceptions.dart';
+import 'package:grocify/utils/popups/loaders.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -197,7 +198,9 @@ class AuthenticationRepository extends GetxController {
     try {
       await GoogleSignIn().signOut();
       await FirebaseAuth.instance.signOut();
+      TLoaders.successSnackBar(title: 'Successful', message: ' Logging you out.');
       Get.offAll(() => const LoginScreen());
+
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {

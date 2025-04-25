@@ -56,7 +56,16 @@ class TSingleAddress extends StatelessWidget {
               const SizedBox(height: TSizes.sm / 2,),
              const Padding(
                 padding:  EdgeInsets.all(2),
-                child: Expanded(child:  Text('411621/1 Zigatola New Road, Dhanmondi, Dhaka, Bangladesh',softWrap: true,)),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding:  EdgeInsets.all(2),
+                    child: Text(
+                      '411621/1 Zigatola New Road, Dhanmondi, Dhaka, Bangladesh',
+                      softWrap: true,
+                    ),
+                  ),
+                ),
               ),
             ],
           )

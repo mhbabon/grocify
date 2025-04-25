@@ -51,15 +51,21 @@ class LoginController extends GetxController {
       // Save data if Remember Me is Selected
       if (rememberMe.value) {
         localStorage.write('Remember_Me_Email', email.text.trim());
-        localStorage.write('Remember_Me_Password', password.text.trim());
       }
 
       // Login User Using Email and Password Authentication
       final userCredential = await AuthenticationRepository.instance
           .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
+
+
+
       // Remove Loader
       TFullScreenLoader.stopLoading();
+
+      TLoaders.successSnackBar(
+          title: 'Congratulation!', message: 'Welcome to Grocify.');
+
 
       /// Redirect
       AuthenticationRepository.instance.screenRedirect();
@@ -94,10 +100,6 @@ class LoginController extends GetxController {
       await userController.saveUserRecord(userCredentials);
 
       TFullScreenLoader.stopLoading();
-
-      TLoaders.successSnackBar(
-          title: 'Congratulation!', message: 'Welcome to Grocify.');
-
       // Redirect
       AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
