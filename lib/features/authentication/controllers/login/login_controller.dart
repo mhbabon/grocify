@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
+import 'package:grocify/data/repositories.authentication/authentication/authentication_repository.dart';
 import 'package:grocify/features/personalization/controllers/user_controller.dart';
 import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/helpers/network_manager.dart';
@@ -54,7 +54,7 @@ class LoginController extends GetxController {
       }
 
       // Login User Using Email and Password Authentication
-      final userCredential = await AuthenticationRepository.instance
+       await AuthenticationRepository.instance
           .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
 

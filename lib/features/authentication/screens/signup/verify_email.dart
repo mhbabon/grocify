@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
+import 'package:grocify/data/repositories.authentication/authentication/authentication_repository.dart';
 import 'package:grocify/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/constants/sizes.dart';

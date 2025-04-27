@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
+import 'package:grocify/data/repositories.authentication/authentication/authentication_repository.dart';
 import 'package:grocify/data/repositories.authentication/user/user_repository.dart';
 import 'package:grocify/features/authentication/screens/signup/verify_email.dart';
 import 'package:grocify/features/personalization/models/user_model.dart';
