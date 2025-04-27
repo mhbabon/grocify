@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:grocify/common/widgets/success_screen/success_screen.dart';
-import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
+import 'package:grocify/data/repositories.authentication/authentication/authentication_repository.dart';
 import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/constants/text_strings.dart';
 import 'package:grocify/utils/popups/loaders.dart';

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
+import 'package:grocify/data/repositories.authentication/authentication/authentication_repository.dart';
 import 'package:grocify/features/personalization/models/user_model.dart';
 import 'package:grocify/utils/exceptions/firebase_exceptions.dart';
 import 'package:grocify/utils/exceptions/format_exceptions.dart';

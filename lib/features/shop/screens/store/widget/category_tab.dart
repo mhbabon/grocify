@@ -1,13 +1,17 @@
+
 import 'package:flutter/material.dart';
 import 'package:grocify/common/widgets/brands/brand_show_case.dart';
 import 'package:grocify/common/widgets/layouts/grid_layout.dart';
 import 'package:grocify/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:grocify/common/widgets/texts/section_heading.dart';
+import 'package:grocify/features/shop/models/category_model.dart';
+import 'package:grocify/features/shop/models/product_model.dart';
 import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 
 class TCategoryTab extends StatelessWidget {
-  const TCategoryTab({super.key});
+  const TCategoryTab({super.key, required this.category});
+  final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +53,7 @@ class TCategoryTab extends StatelessWidget {
 
               TGridLayout(
                   itemCount: 4,
-                  itemBuilder: (_, index) => const TProductCardVertical()),
+                  itemBuilder: (_, index) =>  TProductCardVertical(product:  ProductModel.empty(),)),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
+import 'package:grocify/data/repositories.authentication/authentication/authentication_repository.dart';
 import 'package:grocify/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/popups/full_screen_loader.dart';

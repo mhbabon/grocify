@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocify/bindings/general_bindings.dart';
+import 'package:grocify/routes/app_routes.dart';
 import 'package:grocify/utils/theme/theme.dart';
 
 import 'utils/constants/colors.dart';
@@ -16,6 +17,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
+      getPages: AppRoutes.pages,
       home: const Scaffold(
         backgroundColor: TColors.primary2,
         body: Center(

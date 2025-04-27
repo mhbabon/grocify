@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:grocify/data/repositories.authentication/authentication_repository.dart';
+import 'package:grocify/data/repositories.authentication/authentication/authentication_repository.dart';
 import 'package:grocify/data/repositories.authentication/user/user_repository.dart';
 import 'package:grocify/features/authentication/screens/login/login.dart';
 import 'package:grocify/features/personalization/screens/profile/widgets/re_authenticate_user_login_form.dart';

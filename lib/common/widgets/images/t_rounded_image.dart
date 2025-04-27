@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 
-
 class TRoundedImage extends StatelessWidget {
   const TRoundedImage({
     super.key,
@@ -31,7 +30,6 @@ class TRoundedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return GestureDetector(
       onTap: onPressed,
       child: Container(
@@ -40,7 +38,7 @@ class TRoundedImage extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(
           border: border,
-          color: backgroundColor ,
+          color: backgroundColor,
           borderRadius: BorderRadius.circular(borderRadius),
         ),
         child: ClipRRect(
