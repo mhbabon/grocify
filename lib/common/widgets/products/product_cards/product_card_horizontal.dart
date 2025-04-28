@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:grocify/common/widgets/icons/t_circular_icon.dart';
 import 'package:grocify/common/widgets/images/t_rounded_image.dart';
+import 'package:grocify/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:grocify/common/widgets/texts/product_price_text.dart';
 import 'package:grocify/common/widgets/texts/product_title_text.dart';
 import 'package:grocify/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
@@ -12,7 +12,9 @@ import 'package:grocify/utils/helpers/helper_functions.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TProductCartHorizontal extends StatelessWidget {
-  const TProductCartHorizontal({super.key});
+  const TProductCartHorizontal({super.key,});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -60,13 +62,11 @@ class TProductCartHorizontal extends StatelessWidget {
                 ),
 
                 /// --- Favourite Icon Button
-                const Positioned(
+                 const Positioned(
                     top: 0,
                     right: 0,
-                    child: TCircularIcon(
-                      icon: Iconsax.heart5,
-                      color: Colors.red,
-                    ))
+                    child: TFavouriteIcon(productId: ''),
+                )
               ],
             ),
           ),

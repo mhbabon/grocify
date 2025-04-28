@@ -2,7 +2,9 @@
 
 import 'package:get/get.dart';
 import 'package:grocify/data/repositories.authentication/categories/cateory_repository.dart';
+import 'package:grocify/data/repositories.authentication/product/product_repository.dart';
 import 'package:grocify/features/shop/models/category_model.dart';
+import 'package:grocify/features/shop/models/product_model.dart';
 import 'package:grocify/utils/popups/loaders.dart';
 
 class CategoryController extends GetxController{
@@ -43,5 +45,14 @@ class CategoryController extends GetxController{
   }
   ///  --- Load selected category data
 
-  ///  --- et Category or Sub-category Products
+  ///  --- get Category or Sub-category Products
+    Future<List<ProductModel>> getCategoryProducts({required String categoryId, int limit = 4}) async {
+    // Fetch limited (4) Products against each subcategory;
+      final products = await ProductRepository.instance.getProductsForCategory(categoryId: categoryId, limit: limit);
+    return products;
+    }
+
+
+
+
 }

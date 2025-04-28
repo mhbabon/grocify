@@ -1,36 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:grocify/common/widgets/appbar/appbar.dart';
 import 'package:grocify/common/widgets/custom_shapes/curved_edges/curved_edgs_widget.dart';
-import 'package:grocify/common/widgets/icons/t_circular_icon.dart';
+import 'package:grocify/common/widgets/products/favourite_icon/favourite_icon.dart';
+import 'package:grocify/features/shop/controllers/product_controller.dart';
+import 'package:grocify/features/shop/models/product_model.dart';
 import 'package:grocify/utils/constants/colors.dart';
-import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
-import 'package:iconsax/iconsax.dart';
+
 
 
 class TProductImageSlider extends StatelessWidget {
   const TProductImageSlider({
-    super.key,
+    super.key, required this.product,
   });
 
+final ProductModel product;
 
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+    final controller = Get.put(ProductController());
     return TCurvedEdgeWidget(
       child: Container(
         color: dark ? TColors.darkerGrey : TColors.light,
-        child: const Stack(
+        child:  Stack(
           children: [
 
             /// Main Large Image
 
             SizedBox(height: 400, child: Padding(
-              padding: EdgeInsets.all(TSizes.productImageRadius * 2),
+              padding: const EdgeInsets.all(TSizes.productImageRadius * 2),
               child: Center(
-                  child: Image(image: AssetImage(TImages.productImage1),)),
+                  child:GestureDetector(
+                    onTap: () => controller.showEnlargedImage(product.thumbnail) ,
+                      child: Image.network(product.thumbnail))
+              ),
             )
             ),
 
@@ -58,12 +65,13 @@ class TProductImageSlider extends StatelessWidget {
             //     ),
             //   ),
             // ),
+            // if you want to add product variation
 
             /// -- AppBar Icon
             TAppBar(
               showBackArrow: true,
               actions: [
-                TCircularIcon(icon: Iconsax.heart5, color: Colors.red,)
+                TFavouriteIcon(productId: product.id)
               ],
 
             )
@@ -72,4 +80,8 @@ class TProductImageSlider extends StatelessWidget {
       ) ,
     );
   }
+
+
+
+
 }

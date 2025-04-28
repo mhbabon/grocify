@@ -14,6 +14,7 @@ import 'package:grocify/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:grocify/utils/exceptions/firebase_exceptions.dart';
 import 'package:grocify/utils/exceptions/format_exceptions.dart';
 import 'package:grocify/utils/exceptions/platform_exceptions.dart';
+import 'package:grocify/utils/local_storage/storage_utility.dart';
 import 'package:grocify/utils/popups/loaders.dart';
 
 class AuthenticationRepository extends GetxController {
@@ -40,6 +41,10 @@ class AuthenticationRepository extends GetxController {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailVerified) {
+
+        // Initialized user specific Storage
+        await TLocalStorage.init(user.uid);
+
         Get.offAll(() => const NavigationMenu());
       } else {
         Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email));
