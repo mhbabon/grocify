@@ -3,7 +3,7 @@
 ![Grocify Logo](https://github.com/Learnathon-By-Geeky-Solutions/dartdaredevils/blob/main/assets/logos/t-store-splash-logo-white.png)
 
   
-# 🎓 Grocify  
+# 🛒 Grocify  
 **Bridging the Education Gap Through Community Learning**
 
 ![Dart](https://img.shields.io/badge/Dart-3.0-blue?logo=dart&logoColor=white)
