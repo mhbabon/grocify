@@ -51,8 +51,7 @@ class TCircularImage extends StatelessWidget {
                         errorWidget: (context, url, error) =>
                             const Icon(Icons.error),
                       )
-                    : const Icon(Icons
-                        .error_outline_outlined)) // Placeholder for empty URL
+                    : const Center(child: Icon(Icons.broken_image))) //Placeholder for empty URL
                 : Image(
                     fit: fit,
                     image: AssetImage(image),

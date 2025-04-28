@@ -1,7 +1,10 @@
+
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocify/data/repositories.authentication/product/product_repository.dart';
 import 'package:grocify/features/shop/models/product_model.dart';
 import 'package:grocify/utils/constants/enums.dart';
+import 'package:grocify/utils/constants/sizes.dart';
 import 'package:grocify/utils/popups/loaders.dart';
 
 class ProductController extends GetxController {
@@ -30,6 +33,20 @@ class ProductController extends GetxController {
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       isLoading.value = false;
+    }
+  }
+
+
+
+
+  Future<List<ProductModel>> fetchAllFeaturedProducts() async {
+    try {
+      // Fetch Products
+      final products = await productRepository.getFeaturedProducts();
+return products;
+    } catch (e) {
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      return [];
     }
   }
 
@@ -80,4 +97,34 @@ class ProductController extends GetxController {
   String getProductStockStatus(int stock) {
     return stock > 0 ? 'In Stock' : 'Out of Stock';
   }
+
+
+  // Show Image Popup
+  void showEnlargedImage(String image) {
+    Get.to(
+          () => Dialog.fullscreen(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: TSizes.defaultSpace * 2, horizontal: TSizes.defaultSpace),
+              child: Image.network(image),
+            ),
+            const SizedBox(height: TSizes.spaceBtwSections),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: SizedBox(
+                width: 150,
+                child: OutlinedButton(onPressed: () => Get.back(), child: const Text('Close')),
+              ),
+            ),
+          ],
+        ),
+      ),
+      fullscreenDialog: true,
+    );
+  }
+
 }

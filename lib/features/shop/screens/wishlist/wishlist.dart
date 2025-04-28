@@ -4,9 +4,14 @@ import 'package:grocify/common/widgets/appbar/appbar.dart';
 import 'package:grocify/common/widgets/icons/t_circular_icon.dart';
 import 'package:grocify/common/widgets/layouts/grid_layout.dart';
 import 'package:grocify/common/widgets/products/product_cards/product_card_vertical.dart';
-import 'package:grocify/features/shop/models/product_model.dart';
+import 'package:grocify/common/widgets/shimmers/vertical_product_shimmer.dart';
+import 'package:grocify/features/shop/controllers/favourite_controller.dart';
 import 'package:grocify/features/shop/screens/home/home.dart';
+import 'package:grocify/navigation_menu.dart';
+import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/constants/sizes.dart';
+import 'package:grocify/utils/helpers/cloud_helper_functions.dart';
+import 'package:grocify/utils/loaders/animation_loader.dart';
 import 'package:iconsax/iconsax.dart';
 
 class FavouriteScreen extends StatelessWidget {
@@ -14,6 +19,7 @@ class FavouriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = FavouritesController.instance;
     return Scaffold(
       appBar: TAppBar(
         title: Text(
@@ -30,12 +36,34 @@ class FavouriteScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
-          child: Column(
-            children: [
-              TGridLayout(
-                  itemCount: 4,
-                  itemBuilder: (_, index) =>  TProductCardVertical(product: ProductModel.empty(),))
-            ],
+          child: Obx(
+              () => FutureBuilder(
+                future: controller.favouriteProducts(),
+                builder: (context, snapshot) {
+                  final emptyWidget = TAnimationLoaderWidget(
+                    text: 'Whoops! Wishlist is Empty...',
+                    animation: TImages.pencilAnimation,
+                    showAction: true,
+                    actionText: 'Let\'s add some',
+                    onActionPressed: () => Get.off(() => const NavigationMenu()),
+                  );
+
+                  const loader = TVerticalProductShimmer(
+                    itemCount: 6,
+                  );
+                  final widget = TCloudHelperFunctions.checkMultiRecordState(
+                      snapshot: snapshot,
+                      loader: loader,
+                      nothingFound: emptyWidget);
+                  if (widget != null) return widget;
+
+                  final products = snapshot.data!;
+                  return TGridLayout(
+                      itemCount: products.length,
+                      itemBuilder: (_, index) => TProductCardVertical(
+                            product: products[index],
+                          ));
+                }),
           ),
         ),
       ),
