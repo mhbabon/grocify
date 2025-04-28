@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocify/common/styles/shadows.dart';
 import 'package:grocify/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:grocify/common/widgets/icons/t_circular_icon.dart';
 import 'package:grocify/common/widgets/images/t_rounded_image.dart';
+import 'package:grocify/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:grocify/common/widgets/texts/product_price_text.dart';
 import 'package:grocify/common/widgets/texts/product_title_text.dart';
 import 'package:grocify/common/widgets/texts/t_brand_title_text.dart';
@@ -53,37 +53,36 @@ class TProductCardVertical extends StatelessWidget {
                 children: [
                   Center(
                     child: TRoundedImage(
-                      padding: const EdgeInsets.only(top: 35),
+                     // padding: const EdgeInsets.only(top: 35),
                       imageurl: product.thumbnail,
                       applyImageRadius: true,
                       isNetworkingImage: true,
                     ),
                   ),
+
                   Positioned(
-                    top: 12,
-                    child: TRoundedContainer(
-                      radius: TSizes.sm,
-                      backgroundColor: TColors.secondary.withValues(alpha: 0.8),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: TSizes.sm, vertical: TSizes.xs),
-                      child: Text(
-                        '$salePercentage%',
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelLarge!
-                            .apply(color: TColors.black),
-                      ),
+                  top: 12,
+                  child: TRoundedContainer(
+                    radius: TSizes.sm,
+                    backgroundColor: TColors.secondary.withValues(alpha: 0.8),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: TSizes.sm, vertical: TSizes.xs),
+                    child: Text(
+                      '$salePercentage%',
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelLarge!
+                          .apply(color: TColors.black),
                     ),
                   ),
+                ),
 
                   /// --- Favourite Icon Button
-                  const Positioned(
+                   Positioned(
                       top: 0,
                       right: 0,
-                      child: TCircularIcon(
-                        icon: Iconsax.heart5,
-                        color: Colors.red,
-                      )),
+                      child: TFavouriteIcon(productId: product.id),
+                  ),
                 ],
               ),
             ),
@@ -105,7 +104,7 @@ class TProductCardVertical extends StatelessWidget {
                     height: TSizes.spaceBtwItems / 2,
                   ),
                   TBrandTitleText(
-                    title: product.brand!.name,
+                    title: product.brand?.name ?? 'Default Name',
                   ),
                 ],
               ),

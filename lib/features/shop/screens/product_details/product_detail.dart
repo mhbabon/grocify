@@ -24,7 +24,7 @@ class ProductDetailScreen extends StatelessWidget {
         child: Column(
           children: [
             /// --- Product Image Slider
-            const TProductImageSlider(),
+             TProductImageSlider(product: product,),
 
             /// --- Product Details
             Padding(
@@ -38,11 +38,11 @@ class ProductDetailScreen extends StatelessWidget {
                   const TRatingAndShare(),
 
                   /// --- PRICE, Title,STOCK & Brand
-                  const TProductMetaData(),
+                   TProductMetaData(product: product,),
                   const SizedBox(height: TSizes.defaultSpace,),
 
                   /// --- Attribute
-                  const TProductAttributes(),
+                   TProductAttributes(product: product),
                   const SizedBox(height: TSizes.spaceBtwSections,),
 
                   ///  --checkout Button
@@ -52,14 +52,14 @@ class ProductDetailScreen extends StatelessWidget {
                   ///  --- Description
                   const TSectionHeading(title: 'Description', showActionButton: false,),
                   const SizedBox(height: TSizes.spaceBtwItems,),
-                  const ReadMoreText(
-                      'Enjoy farm-fresh, delicious bananas delivered right to your doorstep! Carefully selected for quality and ripeness, our bananas are rich in flavor and packed with essential nutrients like potassium, fiber, and vitamins.',
+                   ReadMoreText(
+                     product.description ?? '',
                     trimLines: 2,
                     trimMode: TrimMode.Line,
                     trimCollapsedText: ' Show more',
                     trimExpandedText: ' Less',
-                    moreStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w800),
-                    lessStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w800),
+                    moreStyle: const TextStyle(fontSize: 14,fontWeight: FontWeight.w800),
+                    lessStyle: const TextStyle(fontSize: 14,fontWeight: FontWeight.w800),
                   ),
 
                   ///  --- Review

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocify/common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -61,7 +62,9 @@ class HomeScreen extends StatelessWidget {
                         // -- Categories
 
                         THomeCategories(),
-                        SizedBox(height: TSizes.spaceBtwSections,)
+                        SizedBox(
+                          height: TSizes.spaceBtwSections,
+                        )
                       ],
                     ),
                   ),
@@ -74,32 +77,44 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(TSizes.defaultSpace),
                 child: Column(
                   children: [
-
                     /// Promo Slider ---
                     const TPromoSlider(),
                     const SizedBox(
                       height: TSizes.spaceBtwSections,
                     ),
 
-
                     /// Heading---
-                    TSectionHeading(title: 'Popular Products',
-                      onPressed: () => Get.to(() => const AllProducts()),),
-                    const SizedBox(height: TSizes.spaceBtwItems,),
+                    TSectionHeading(
+                      title: 'Popular Products',
+                      onPressed: () => Get.to(() =>  AllProducts(
+                            title: 'Popular Products', 
 
+                        futureMethod: controller.fetchAllFeaturedProducts() ,
+                          )),
+                    ),
+                    const SizedBox(
+                      height: TSizes.spaceBtwItems,
+                    ),
 
                     /// ---Popular Products ---
                     Obx(() {
-                      if(controller.isLoading.value) return const TVerticalProductShimmer();
-
-                      if(controller.featuredProducts.isEmpty) {
-                        return  Center(child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium,));
+                      if (controller.isLoading.value) {
+                        return const TVerticalProductShimmer();
                       }
-                     return TGridLayout(itemCount: controller.featuredProducts.length,
-                         itemBuilder: (_, index) =>  TProductCardVertical(product: controller.featuredProducts[index],));
-                        }),
 
-
+                      if (controller.featuredProducts.isEmpty) {
+                        return Center(
+                            child: Text(
+                          'No Data Found!',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ));
+                      }
+                      return TGridLayout(
+                          itemCount: controller.featuredProducts.length,
+                          itemBuilder: (_, index) => TProductCardVertical(
+                                product: controller.featuredProducts[index],
+                              ));
+                    }),
                   ],
                 ))
           ],

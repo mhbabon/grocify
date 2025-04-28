@@ -2,8 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:grocify/features/shop/models/brand_model.dart';
-// import 'package:grocify/features/shop/models/producct_attribute_model.dart';
-// import 'package:grocify/features/shop/models/product_variation_model.dart';
+
 
 
 class ProductModel{
@@ -22,6 +21,7 @@ class ProductModel{
   String? categoryId;
   List<String>? images;
   String productType;
+  String quantity;
   // List<ProductAttributeModel>?  productAttributes;
   // List<ProductVariationModel>?  productVariations;
 
@@ -33,6 +33,7 @@ class ProductModel{
     required this.price,
     required this.thumbnail,
     required this.productType,
+    required this.quantity,
     this.sku,
     this.brand,
     this.date,
@@ -46,7 +47,7 @@ class ProductModel{
   });
 
   /// Create Empty func for clean code
-  static ProductModel empty() => ProductModel(id: '', title: '', stock: 0, price: 0, thumbnail: '', productType: '');
+  static ProductModel empty() => ProductModel(id: '', title: '', stock: 0, price: 0, thumbnail: '', productType: '', quantity: '');
 
   /// Json Format
   toJson() {
@@ -56,7 +57,8 @@ class ProductModel{
       'Stock': stock,
       'Price': price,
       'Images': images ?? [],
-      'Thumbnail': thumbnail ?? '',
+      'Thumbnail': thumbnail,
+      'Quantity': quantity,
       'SalePrice': salePrice,
       'IsFeatured': isFeatured,
       'CategoryId': categoryId,
@@ -85,9 +87,33 @@ class ProductModel{
       productType: data['ProductType'] ?? '',
       brand: BrandModel.fromJson(data['Brand']),
       images: data['Images'] != null ? List<String>.from(data['Images']) : [],
+      quantity: data['Quantity'] ?? '',
       // productAttributes: (data['ProductAttributes'] as List<dynamic>).map((e) => ProductAttributeModel.fromJson(e)).toList(),
       // productVariations: (data['ProductVariations'] as List<dynamic>).map((e) => ProductVariationModel.fromJson(e)).toList(),
     ); // ProductModel
   }
+
+
+  /// Map Json-oriented document snapshot from Firebase to Model
+  factory ProductModel.fromQuerySnapshot(QueryDocumentSnapshot<Object?> document) {
+    final data = document.data() as Map<String, dynamic>;
+    return ProductModel(
+      id: document.id,
+      sku: data['SKU'] ?? '',
+      title: data['Title'] ?? '',
+      stock: data['Stock'] ?? 0,
+      isFeatured: data['IsFeatured'] ?? false,
+      price: double.parse((data['Price'] ?? 0.0).toString()),
+      salePrice: double.parse((data['SalePrice'] ?? 0.0).toString()),
+      thumbnail: data['Thumbnail'] ?? '',
+      categoryId: data['CategoryId'] ?? '',
+      productType: data['ProductType'] ?? '',
+      description: data['Description'] ?? '',
+      brand: BrandModel.fromJson(data['Brand']),
+      images: data['Images'] != null ? List<String>.from(data['Images']) : [],
+      quantity: data['Quantity'] ?? '',
+    ); // ProductModel
+  }
+
 
 }

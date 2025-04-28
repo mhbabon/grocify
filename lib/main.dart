@@ -26,17 +26,17 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
       .then((FirebaseApp value) => Get.put(AuthenticationRepository()));
 
+
+
+
+
   // --- Initialize SupBase
   await Supabase.initialize(
     url: dotenv.env['API_URL'] ?? '',
     anonKey: dotenv.env['API_KEY'] ?? '',
   );
-
   Supabase.instance.client;
 
-  // Get.put(AuthenticationRepository());  // Auth repo
-  // Get.put(ProductRepository());
-  //
-  // await ProductRepository.instance.uploadDummyData();
+
   runApp(const App());
 }

@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:grocify/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:grocify/common/widgets/images/t_circular_image.dart';
 import 'package:grocify/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
+import 'package:grocify/features/shop/models/brand_model.dart';
 import 'package:grocify/utils/constants/enums.dart';
-import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 
 class TBrandCard extends StatelessWidget {
   const TBrandCard({
     super.key,
     required this.showBorder,
-    this.onTap,
+    this.onTap, required this.brand,
   });
 
+  final BrandModel brand;
   final bool showBorder;
   final void Function()? onTap;
 
@@ -28,10 +29,11 @@ class TBrandCard extends StatelessWidget {
           children: [
             /// --- Icon
 
-            const Flexible(
+             Flexible(
               child: TCircularImage(
-                isNetworkImage: false,
-                image: TImages.beveragesIcon,
+                isNetworkImage: true,
+                image:brand.image,
+                // Use a fallback URL or asset
                 backgroundColor: Colors.transparent,
               ),
             ),
@@ -46,12 +48,12 @@ class TBrandCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TBrandTitleWithVerifiedIconText(
-                    title: 'Beverages',
+                   TBrandTitleWithVerifiedIconText(
+                    title: brand.name,
                     brandTextSize: TextSizes.large,
                   ),
                   Text(
-                    '156 products',
+                    '${brand.productsCount ?? 0} Products',
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.labelMedium,
                   )

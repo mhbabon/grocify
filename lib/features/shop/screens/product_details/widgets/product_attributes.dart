@@ -3,17 +3,22 @@ import 'package:grocify/common/widgets/custom_shapes/containers/rounded_containe
 import 'package:grocify/common/widgets/texts/product_price_text.dart';
 import 'package:grocify/common/widgets/texts/product_title_text.dart';
 import 'package:grocify/common/widgets/texts/section_heading.dart';
+import 'package:grocify/features/shop/controllers/product_controller.dart';
+import 'package:grocify/features/shop/models/product_model.dart';
 import 'package:grocify/utils/constants/colors.dart';
+import 'package:grocify/utils/constants/enums.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 
 class TProductAttributes extends StatelessWidget {
-  const TProductAttributes({super.key});
+  const TProductAttributes({super.key, required this.product});
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+    final controller = ProductController.instance;
     return Column(
       children: [
         TRoundedContainer(
@@ -40,7 +45,8 @@ class TProductAttributes extends StatelessWidget {
                           const SizedBox(
                             width: TSizes.spaceBtwItems,
                           ),
-                          Text('\$10',
+                          if(product.productType == ProductType.single.toString() && product.salePrice > 0)
+                          Text('\$${product.price}',
                               style: Theme.of(context)
                                   .textTheme
                                   .titleSmall!
@@ -49,7 +55,7 @@ class TProductAttributes extends StatelessWidget {
                           const SizedBox(
                             width: TSizes.spaceBtwItems,
                           ),
-                          const TProductPriceText(price: '7.5')
+                           TProductPriceText(price : controller.getProductPrice(product))
                         ],
                       ),
 
@@ -58,27 +64,31 @@ class TProductAttributes extends StatelessWidget {
                       Row(
                         children: [
                           const TProductTitleText(
-                            title: 'Stock : ',
+                            title: 'Stock :  ',
                             smallSize: true,
                           ),
-                          Text(
-                            'In Stock',
-                            style: Theme.of(context).textTheme.titleMedium,
+                          Text(product.stock.toString(), style: Theme.of(context).textTheme.titleMedium,
                           )
                         ],
-                      )
+                      ),
+                      const SizedBox(
+                        width: TSizes.spaceBtwItems,
+                      ),
+                      Row(
+                        children: [
+                          const TProductTitleText(
+                            title: 'Quantity :  ',
+                            smallSize: true,
+                          ),
+                          Text(product.quantity.toString(), style: Theme.of(context).textTheme.titleMedium,)
+                        ],
+                      ),
+
                     ],
                   )
                 ],
               ),
 
-              /// -- Variation Description
-              const TProductTitleText(
-                  title:
-                      'This is the Description of the product and it can go up to max four lines.',
-                  smallSize: true,
-                  maxLines: 4,
-              )
             ],
           ),
         ),
