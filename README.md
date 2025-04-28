@@ -114,12 +114,12 @@ Feature	Description
 
 ## 👥 Team Members
 
-| Name            | Role         | GitHub Profile                             |
-|-----------------|---------------|----------------------------------------------------------|
-| riyadhossain-rh | Team Leader   | [@riyadhossain-rh](https://github.com/riyadhossain-rh)   |
-| mhbabon         | Member        | [@mhbabon](https://github.com/mhbabon)                   |
-| Sakib360a       | Member        | [@Sakib360a](https://github.com/Sakib360a)               |
-| ihjohny         | Project Mento | [@ihjohny](https://github.com/ihjohny)                   |
+| Name            | Role           | GitHub Profile                             |
+|-----------------|----------------|----------------------------------------------------------|
+| riyadhossain-rh | Team Leader    | [@riyadhossain-rh](https://github.com/riyadhossain-rh)   |
+| mhbabon         | Member         | [@mhbabon](https://github.com/mhbabon)                   |
+| Sakib360a       | Member         | [@Sakib360a](https://github.com/Sakib360a)               |
+| ihjohny         | Project Mentor | [@ihjohny](https://github.com/ihjohny)                   |
 
 
 
