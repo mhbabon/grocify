@@ -4,7 +4,7 @@
 
   
 # 🛒 Grocify  
-**Bridging the Education Gap Through Community Learning**
+** Shop Smart. Live Better. **
 
 ![Dart](https://img.shields.io/badge/Dart-3.0-blue?logo=dart&logoColor=white)
 ![Flutter](https://img.shields.io/badge/Flutter-3.10-blue?logo=flutter&logoColor=white)
