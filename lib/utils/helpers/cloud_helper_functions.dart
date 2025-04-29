@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 /// Helper functions for cloud-related operations.
 class TCloudHelperFunctions {
 
+  static const String errorMessage = 'Something went wrong';
+
   /// Helper function to check the state of a single database record.
   ///
   /// Returns a Widget based on the state of the snapshot.
@@ -22,7 +24,7 @@ class TCloudHelperFunctions {
     }
 
     if (snapshot.hasError) {
-      return const Center(child: Text('Something went wrong.'));
+      return const Center(child: Text(errorMessage));
     }
 
     return null;
@@ -49,7 +51,7 @@ class TCloudHelperFunctions {
 
   if (snapshot.hasError) {
   if (error != null) return error;
-  return const Center(child: Text('Something went wrong.'));
+  return const Center(child: Text(errorMessage));
   }
 
   return null;
@@ -68,7 +70,7 @@ class TCloudHelperFunctions {
   } on PlatformException catch (e) {
   throw e.message!;
   } catch (e) {
-  throw 'Something went wrong.';
+  throw errorMessage;
   }
   }
 

@@ -47,6 +47,8 @@ class UserController extends GetxController {
     fetchUserRecord();
     fetchUserProfileImage();
   }
+  static const String errorTitle = 'Oh Snap';
+
 
   // Fetch User Record
   Future<void> fetchUserRecord() async {
@@ -196,7 +198,7 @@ class UserController extends GetxController {
       }
     } catch (e) {
       TFullScreenLoader.stopLoading();
-      TLoaders.warningSnackBar(title: 'Oh Snap', message: e.toString());
+      TLoaders.warningSnackBar(title: errorTitle, message: e.toString());
     }
   }
 
@@ -229,7 +231,7 @@ class UserController extends GetxController {
       Get.offAll(() => const LoginScreen());
     } catch (e) {
       TFullScreenLoader.stopLoading();
-      TLoaders.warningSnackBar(title: 'Oh Snap', message: e.toString());
+      TLoaders.warningSnackBar(title:errorTitle, message: e.toString());
     }
   }
 
@@ -289,7 +291,7 @@ class UserController extends GetxController {
 
  //     print('✅ Profile image URL saved to Firestore');
     } catch (e) {
-      TLoaders.errorSnackBar(title: 'Oh Snap', message: ' Something went wrong: $e');
+      TLoaders.errorSnackBar(title: errorTitle, message: ' Something went wrong: $e');
  //     print('❌ Error: $e');
     }
   }
