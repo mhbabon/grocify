@@ -42,8 +42,8 @@ final VoidCallback onTap;
             padding: const EdgeInsets.all(TSizes.md),
             width: double.infinity,
             showBorder: true,
-            backgroundColor: selectedAddress ? TColors.primary.withValues(alpha: 0.5) : Colors.transparent ,
-            borderColor: selectedAddress ?  Colors.transparent : dark ? TColors.darkerGrey :TColors.grey ,
+            backgroundColor: _getBackgroundColor(selectedAddress),
+            borderColor: _getBorderColor(selectedAddress, dark),
             margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
             child: Stack(
               children: [
@@ -51,7 +51,7 @@ final VoidCallback onTap;
                   top: 0,
                   right: 5,
                   child: Icon(selectedAddress ? Iconsax.tick_circle5 : null,
-                    color: selectedAddress ? dark ? TColors.light : TColors.dark :null,
+                    color:_getIconColor(selectedAddress, dark) ,
                   ),
                 ),
                 Column(
@@ -89,4 +89,19 @@ final VoidCallback onTap;
       }
     );
   }
+
+  Color _getBackgroundColor(bool selectedAddress) =>
+      selectedAddress ? TColors.primary.withValues(alpha: 0.5) : Colors.transparent;
+
+  Color _getBorderColor(bool selectedAddress, bool dark) =>
+      selectedAddress ? Colors.transparent : (dark ? TColors.darkerGrey : TColors.grey);
+
+  Color? _getIconColor(bool selectedAddress, bool dark) =>
+      selectedAddress ? (dark ? TColors.light : TColors.dark) : null;
+
+
 }
+
+
+
+
