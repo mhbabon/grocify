@@ -13,6 +13,9 @@ class ProductRepository extends GetxController {
   /// Firestore instance for database interactions.
   final _db = FirebaseFirestore.instance;
 
+  static const String genericErrorMessage = 'Something went wrong. Please try again.';
+
+
 
   // Get limited featured products
   Future<List<ProductModel>> getFeaturedProducts() async {
@@ -24,7 +27,7 @@ class ProductRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw genericErrorMessage;
     }
   }
 
@@ -38,7 +41,7 @@ class ProductRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw genericErrorMessage;
     }
   }
 
@@ -53,7 +56,7 @@ class ProductRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw genericErrorMessage;
     }
   }
 
@@ -70,7 +73,7 @@ class ProductRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw genericErrorMessage;
     }
   }
 
@@ -96,7 +99,7 @@ class ProductRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw genericErrorMessage;
     }
   }
 
@@ -120,7 +123,7 @@ class ProductRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw genericErrorMessage;
     }
   }
 
