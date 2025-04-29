@@ -32,32 +32,51 @@ class TCircularImage extends StatelessWidget {
         height: height,
         padding: EdgeInsets.all(padding),
         decoration: BoxDecoration(
-            color: backgroundColor ?? (THelperFunctions.isDarkMode(context)
-                    ? TColors.black
-                    : TColors.white),
+            color: _getBackgroundColor(context),
             borderRadius: BorderRadius.circular(100)),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(100),
           child: Center(
-            child: isNetworkImage
-                ? (image.isNotEmpty
-                    ? CachedNetworkImage(
-                        fit: fit,
-                        color: overlayColor,
-                        imageUrl: image,
-                        progressIndicatorBuilder:
-                            (context, url, downloadProgress) =>
-                                const TShimmerEffect(width: 55, height: 55),
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
-                      )
-                    : const Center(child: Icon(Icons.broken_image))) //Placeholder for empty URL
-                : Image(
-                    fit: fit,
-                    image: AssetImage(image),
-                    color: overlayColor,
-                  ),
+            child: _getImageWidget(),
           ),
         ));
   }
+
+  // Function to get background color dynamically
+  Color _getBackgroundColor(BuildContext context) {
+    if (backgroundColor != null) {
+      return backgroundColor!;
+    }
+    return THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white;
+  }
+
+
+
+
+  // Function to handle image loading dynamically
+  Widget _getImageWidget() {
+    if (isNetworkImage) {
+      if (image.isNotEmpty) {
+        return CachedNetworkImage(
+          fit: fit,
+          color: overlayColor,
+          imageUrl: image,
+          progressIndicatorBuilder: (context, url, downloadProgress) =>
+          const TShimmerEffect(width: 55, height: 55),
+          errorWidget: (context, url, error) => const Icon(Icons.error),
+        );
+      } else {
+        return const Center(child: Icon(Icons.broken_image)); // Placeholder for empty URL
+      }
+    } else {
+      return Image(
+        fit: fit,
+        image: AssetImage(image),
+        color: overlayColor,
+      );
+    }
+  }
+
+
+
 }
