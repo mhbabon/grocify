@@ -53,7 +53,7 @@ final favourites = <String, bool> {}.obs;
 
   void  saveFavouritesToStorage() {
     final encodedFavourites = json.encode(favourites);
-    TLocalStorage.instance().saveData('favourites', encodedFavourites);
+    TLocalStorage.instance().writeData('favourites', encodedFavourites);
   }
 
 
