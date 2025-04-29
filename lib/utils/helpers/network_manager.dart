@@ -10,9 +10,13 @@ import '../popups/loaders.dart';
 class NetworkManager extends GetxController {
   static NetworkManager get instance => Get.find();
 
-  final Connectivity _connectivity = Connectivity();
+  final Connectivity _connectivity;
+//  final Connectivity _connectivity = Connectivity();
   late StreamSubscription<List<ConnectivityResult>> _connectivitySubscription;
   final RxList<ConnectivityResult> _connectionStatus = <ConnectivityResult>[].obs;
+
+
+  NetworkManager({Connectivity? connectivity}) : _connectivity = connectivity ?? Connectivity();
 
   /// Initialize the network manager and set up a stream to continually check the connection status.
   @override
