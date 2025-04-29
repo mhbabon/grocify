@@ -27,6 +27,27 @@ class TSearchContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
 
+
+
+    // Handling background color with if-else
+    Color backgroundColor;
+    if (showBackground) {
+      if (dark) {
+        backgroundColor = TColors.dark;
+      } else {
+        backgroundColor = TColors.light;
+      }
+    } else {
+      backgroundColor = Colors.transparent;
+    }
+
+    // Handling border condition
+    Border? border;
+    if (showBorder) {
+      border = Border.all(color: TColors.grey);
+    } else {
+      border = null;
+    }
     return GestureDetector(
       onTap: onTap,
       child: Padding(
@@ -35,13 +56,9 @@ class TSearchContainer extends StatelessWidget {
             width: TDeviceUtils.getScreenWidth(context),
             padding: const EdgeInsets.all(TSizes.md),
             decoration: BoxDecoration(
-              color: showBackground
-                  ? dark
-                      ? TColors.dark
-                      : TColors.light
-                  : Colors.transparent,
+              color: backgroundColor,
               borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
-              border: showBorder ? Border.all(color: TColors.grey) : null,
+              border:border,
             ),
             child: Row(
               children: [
