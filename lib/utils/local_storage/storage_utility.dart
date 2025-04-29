@@ -10,9 +10,12 @@ class TLocalStorage {
   TLocalStorage._internal();
 
   factory TLocalStorage.instance() {
-     _instance ?? TLocalStorage._internal();
-     return  _instance!;
+    _instance ??= TLocalStorage._internal(); //  Properly assign
+    return _instance!;
   }
+
+
+
 
 
   static Future<void> init(String bucketName) async{

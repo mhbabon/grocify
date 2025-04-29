@@ -20,6 +20,8 @@ import 'package:grocify/utils/popups/loaders.dart';
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
 
+
+
   /// Variable
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
@@ -27,6 +29,8 @@ class AuthenticationRepository extends GetxController {
 
   // Get Authentication User Data
   User? get authUser => _auth.currentUser;
+
+
 
   /// Call from main.dart on app launch
   @override
@@ -57,6 +61,10 @@ class AuthenticationRepository extends GetxController {
           : Get.offAll(const OnBoardingScreen());
     }
   }
+
+
+
+
 
   /*--------------------- Email and Password Sign-in --------------------*/
 
