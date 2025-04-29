@@ -20,13 +20,7 @@ class THomeAppBar extends StatelessWidget {
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            TTexts.homeAppbarTitle,
-            style: Theme.of(context)
-                .textTheme
-                .labelMedium!
-                .apply(color: TColors.grey),
-          ),
+          Text(TTexts.homeAppbarTitle, style: Theme.of(context).textTheme.labelMedium!.apply(color: TColors.grey),),
           Obx(
             () {
               if(controller.profileLoading.value){
@@ -41,9 +35,8 @@ class THomeAppBar extends StatelessWidget {
             })
         ],
       ),
-      actions: [
+      actions: const [
         TCartCounterIcon(
-          onPressed: () {},
           iconColor: TColors.white,
         )
       ],

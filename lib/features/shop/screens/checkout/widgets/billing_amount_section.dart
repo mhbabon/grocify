@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:grocify/features/shop/controllers/cart_controller.dart';
 import 'package:grocify/utils/constants/sizes.dart';
+import 'package:grocify/utils/helpers/pricing_caculator.dart';
 
 class TBillingAmountSection extends StatelessWidget {
   const TBillingAmountSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final cartController = CartController.instance;
+    final subTotal = cartController.totalCartPrice.value;
+
     return Column(
       children: [
         Row(
@@ -16,7 +21,7 @@ class TBillingAmountSection extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             Text(
-              '\$24..00',
+              'BDT $subTotal',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],
@@ -32,7 +37,7 @@ class TBillingAmountSection extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             Text(
-              '\$06..00',
+              'BDT ${TPricingCalculator.calculateShippingCost(subTotal, 'BD')}',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],
@@ -48,7 +53,7 @@ class TBillingAmountSection extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             Text(
-              '\$03..00',
+              'BDT ${TPricingCalculator.calculateTax(subTotal, 'BD')}',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],
@@ -64,7 +69,7 @@ class TBillingAmountSection extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             Text(
-              '\$33..00',
+              'BDT ${TPricingCalculator.calculateTotalPrice(subTotal, 'BD').toStringAsFixed(2)}',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],

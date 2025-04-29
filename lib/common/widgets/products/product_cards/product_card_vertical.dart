@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:grocify/common/styles/shadows.dart';
 import 'package:grocify/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:grocify/common/widgets/images/t_rounded_image.dart';
+import 'package:grocify/common/widgets/products/cart/add_to_cart_button.dart';
 import 'package:grocify/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:grocify/common/widgets/texts/product_price_text.dart';
 import 'package:grocify/common/widgets/texts/product_title_text.dart';
@@ -14,7 +15,7 @@ import 'package:grocify/utils/constants/colors.dart';
 import 'package:grocify/utils/constants/enums.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
-import 'package:iconsax/iconsax.dart';
+
 
 class TProductCardVertical extends StatelessWidget {
   const TProductCardVertical({super.key, required this.product});
@@ -144,24 +145,7 @@ class TProductCardVertical extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: TColors.dark,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(TSizes.cardRadiusMd),
-                      bottomRight: Radius.circular(TSizes.productImageRadius),
-                    ),
-                  ),
-                  child: const SizedBox(
-                      width: TSizes.iconLg * 1.2,
-                      height: TSizes.iconLg * 1.2,
-                      child: Center(
-                        child: Icon(
-                          Iconsax.add,
-                          color: TColors.white,
-                        ),
-                      )),
-                )
+                ProductCardAddButton(product: product,)
               ],
             )
           ],
@@ -170,3 +154,5 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
+
+
