@@ -27,14 +27,25 @@ class TCircularIcon extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: backgroundColor != null
-            ? backgroundColor!
-            : THelperFunctions.isDarkMode(context)
-                ? TColors.black.withValues(alpha: 0.9)
-                : TColors.white.withValues(alpha: 0.9),
+        color: _getBackgroundColor(context),
         borderRadius: BorderRadius.circular(100),
       ),
       child: IconButton(onPressed: onPressed, icon: Icon(icon, color: color,size: size,)),
     );
   }
+
+
+  // Function to get background color dynamically without nested ternary
+  Color _getBackgroundColor(BuildContext context) {
+    if (backgroundColor != null) {
+      return backgroundColor!;
+    } else if (THelperFunctions.isDarkMode(context)) {
+      return TColors.black.withValues(alpha: 0.9);
+    } else {
+      return TColors.white.withValues(alpha: 0.9);
+    }
+  }
+
 }
+
+
