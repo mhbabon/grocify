@@ -1,5 +1,5 @@
 import '../../constants/colors.dart';
-import '../extension/custom_color_extension.dart';
+import '../../extension/custom_color_extension.dart';
 
 class TCustomColor {
   TCustomColor._();
