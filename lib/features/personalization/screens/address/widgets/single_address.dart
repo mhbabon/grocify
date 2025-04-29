@@ -21,17 +21,6 @@ final VoidCallback onTap;
 
     final dark = THelperFunctions.isDarkMode(context);
 
-
-
-    // if (selectedAddress) {
-    //   borderColor = dark ? TColors.darkerGrey : TColors.grey;
-    //   iconColor = dark ? TColors.light : TColors.dark;
-    // } else {
-    //   borderColor = Colors.grey;
-    //   iconColor = Colors.transparent;
-    // }
-
-
     return  Obx(
       ()  {
         final selectedAddressId = controller.selectedAddress.value.id;
@@ -90,14 +79,39 @@ final VoidCallback onTap;
     );
   }
 
-  Color _getBackgroundColor(bool selectedAddress) =>
-      selectedAddress ? TColors.primary.withValues(alpha: 0.5) : Colors.transparent;
+// Getter Functions Converted to If-Else
+  Color _getBackgroundColor(bool selectedAddress) {
+    if (selectedAddress) {
+      return TColors.primary.withValues(alpha: 0.5);
+    } else {
+      return Colors.transparent;
+    }
+  }
 
-  Color _getBorderColor(bool selectedAddress, bool dark) =>
-      selectedAddress ? Colors.transparent : (dark ? TColors.darkerGrey : TColors.grey);
 
-  Color? _getIconColor(bool selectedAddress, bool dark) =>
-      selectedAddress ? (dark ? TColors.light : TColors.dark) : null;
+  Color _getBorderColor(bool selectedAddress, bool dark) {
+    if (selectedAddress) {
+      return Colors.transparent;
+    } else if (dark) {
+      return TColors.darkerGrey;
+    } else {
+      return TColors.grey;
+    }
+  }
+
+
+  Color? _getIconColor(bool selectedAddress, bool dark) {
+    if (selectedAddress) {
+      if (dark) {
+        return TColors.light;
+      } else {
+        return TColors.dark;
+      }
+    } else {
+      return null;
+    }
+  }
+
 
 
 }
