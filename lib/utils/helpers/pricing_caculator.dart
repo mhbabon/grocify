@@ -34,7 +34,7 @@ class TPricingCalculator {
   static double getShippingCost(String location) {
     // Lookup the shipping cost for the given location using a shipping rate API.
     // Calculate the shipping cost based on various factors like distance, weight, etc.
-    return 5.00; // Example shipping cost of $5
+    return 50.00; // Example shipping cost of $5
   }
 
  /// -- Sum all cart values and return total amount

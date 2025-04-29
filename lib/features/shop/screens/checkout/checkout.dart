@@ -3,16 +3,17 @@ import 'package:get/get.dart';
 import 'package:grocify/common/widgets/appbar/appbar.dart';
 import 'package:grocify/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:grocify/common/widgets/products/cart/coupon_widget.dart';
-import 'package:grocify/common/widgets/success_screen/success_screen.dart';
+import 'package:grocify/features/shop/controllers/cart_controller.dart';
+import 'package:grocify/features/shop/controllers/order_controller.dart';
 import 'package:grocify/features/shop/screens/cart/widgets/cart_items.dart';
 import 'package:grocify/features/shop/screens/checkout/widgets/billing_address_section.dart';
 import 'package:grocify/features/shop/screens/checkout/widgets/billing_amount_section.dart';
 import 'package:grocify/features/shop/screens/checkout/widgets/billing_payment_section.dart';
-import 'package:grocify/navigation_menu.dart';
 import 'package:grocify/utils/constants/colors.dart';
-import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 import 'package:grocify/utils/helpers/helper_functions.dart';
+import 'package:grocify/utils/helpers/pricing_caculator.dart';
+import 'package:grocify/utils/popups/loaders.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
@@ -20,6 +21,11 @@ class CheckoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+    final cartController = CartController.instance;
+    final subTotal = cartController.totalCartPrice.value;
+    final orderController = Get.put(OrderController());
+    final totalAmount = TPricingCalculator.calculateTotalPrice(subTotal, 'BD');
+
     return Scaffold(
         appBar: TAppBar(
           showBackArrow: true,
@@ -89,13 +95,12 @@ class CheckoutScreen extends StatelessWidget {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: ElevatedButton(
-              onPressed: () => Get.to(() => SuccessScreen(
-                    image: TImages.successfulPaymentIcon,
-                    title: 'Payment Success!',
-                    subTitle: 'Your item will be shipped soon!',
-                    onPressed: () => Get.offAll(() => const NavigationMenu()),
-                  )),
-              child: const Text(' Checkout \$48.00')),
+              onPressed: subTotal > 0
+                  ? () => orderController.processOrder(totalAmount)
+                  : () => TLoaders.warningSnackBar(
+                      title: 'Empty Cart',
+                      message: "Add items in the cart in order to process"),
+              child: Text(' Checkout  ৳${totalAmount.toStringAsFixed(2)}')),
         ));
   }
 }
