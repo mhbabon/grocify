@@ -6,8 +6,8 @@ import 'package:grocify/common/widgets/layouts/grid_layout.dart';
 import 'package:grocify/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:grocify/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:grocify/features/shop/controllers/favourite_controller.dart';
+import 'package:grocify/features/shop/screens/all_products/all_products.dart';
 import 'package:grocify/features/shop/screens/home/home.dart';
-import 'package:grocify/navigation_menu.dart';
 import 'package:grocify/utils/constants/image_strings.dart';
 import 'package:grocify/utils/constants/sizes.dart';
 import 'package:grocify/utils/helpers/cloud_helper_functions.dart';
@@ -45,7 +45,8 @@ class FavouriteScreen extends StatelessWidget {
                     animation: TImages.pencilAnimation,
                     showAction: true,
                     actionText: 'Let\'s add some',
-                    onActionPressed: () => Get.off(() => const NavigationMenu()),
+                    onActionPressed: () => Get.off(() => const AllProducts( title: 'All Products',
+                    )),
                   );
 
                   const loader = TVerticalProductShimmer(
