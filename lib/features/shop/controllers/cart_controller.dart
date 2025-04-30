@@ -9,6 +9,10 @@ class CartController extends GetxController {
   static CartController get instance => Get.find();
 
 
+
+
+
+
   CartController() {
     loadCartItems();
   }
@@ -177,6 +181,7 @@ class CartController extends GetxController {
   }
 
 }
+
 
 
 

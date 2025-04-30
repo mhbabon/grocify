@@ -22,6 +22,8 @@ class AuthenticationRepository extends GetxController {
 
 
 
+
+
   /// Variable
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
