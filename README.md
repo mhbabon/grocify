@@ -26,7 +26,7 @@
 Follow these steps to set up the project:  
 
  1️⃣.🚀**Clone the Repository** 
- 2️⃣.🚀**Must be Add a .env File for App Load** ⭐⭐⭐
+ 2️⃣.🚀**Must be Add a .env File for App Load and also add env on pubspec.yml under asset** ⭐⭐⭐
  3️⃣.🚀**Flutter Pub Get** 
  4️⃣.🚀**Flutter Run** 
 
